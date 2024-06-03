@@ -1,12 +1,17 @@
-import React from "react";
-
-const SingleUser = () => {
+/* eslint-disable react/prop-types */
+const SingleUser = ({ index, user }) => {
   return (
     <tr>
-      <th className="text-lg">1</th>
-      <td className="text-lg">photo</td>
-      <td className="text-lg">Name</td>
-      <td className="text-lg">Email</td>
+      <th className="text-lg">{index + 1}</th>
+      <td className="w-24 h-24">
+        <img
+          className="w-[100%] h-[100%] rounded-full"
+          src={user?.photo}
+          alt="photo"
+        />
+      </td>
+      <td className="text-lg ">{user?.name}</td>
+      <td className="text-lg">{user?.email}</td>
     </tr>
   );
 };

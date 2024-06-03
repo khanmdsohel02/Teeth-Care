@@ -69,7 +69,7 @@ const AddTreatment = () => {
           type="submit"
           className="btn text-slate-200 pb-2 pt-1 text-2xl bg-transparent border-slate-200 hover:border-none hover:bg-blue-600"
         >
-          Add Service
+          Add Treatment
         </button>
       </form>
     </div>

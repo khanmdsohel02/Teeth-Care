@@ -42,7 +42,7 @@ const SingleTreatment = ({ treatment, index }) => {
         </td>
         <td className="flex gap-2 justify-center mt-4">
           <Link
-            to={`/updateproduct/${id}`}
+            to={`update-treatment/${id}`}
             className="btn text-red-500 bg-orange-200 text-lg"
           >
             Edit

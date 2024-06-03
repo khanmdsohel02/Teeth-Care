@@ -1,13 +1,41 @@
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const CreateBlog = () => {
+  const navigate = useNavigate();
   const handleCreateBlog = (e) => {
     e.preventDefault();
     const form = e.target;
     const question = form.question.value;
     const qanswer = form.qanswer.value;
     const photo = form.photo.value;
+    const createdDate = form.date.value;
 
-    const blog = { question, qanswer, photo };
+    const blog = { question, qanswer, photo, createdDate };
     console.log(blog);
+
+    const isConfirm = window.confirm(
+      `Are you sure?You want to create ${question} blog?`
+    );
+
+    if (isConfirm) {
+      fetch("http://localhost:3000/blog", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(blog),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            toast.success("Blog created successfully");
+            form.reset();
+            navigate("/blogs");
+          }
+        });
+    }
   };
   return (
     <div className="lg:w-[60%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
@@ -31,6 +59,12 @@ const CreateBlog = () => {
           type="text"
           className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
           placeholder="Photo URL"
+        />
+        <input
+          name="date"
+          type="text"
+          className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium hidden"
+          defaultValue={new Date().toDateString()}
         />
 
         <button

@@ -17,6 +17,7 @@ import AllUser from "../pages/Dashboard/AllUser";
 import AddTreatment from "../pages/Dashboard/AddTreatment";
 import Treatments from "../pages/Treatments/Treatments";
 import ManageTreatments from "../pages/Dashboard/ManageTreatments";
+import UpdateTreatment from "../components/UpdateTreatment";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blogs />,
+        loader: () => fetch("http://localhost:3000/blogs"),
       },
       {
         path: "contact",
@@ -69,10 +71,23 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3000/treatments"),
       },
       {
+        path: "/dashboard/update-treatment/:id",
+        element: <UpdateTreatment />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/treatment/${params.id}`),
+      },
+      {
         path: "manage-treatments",
         element: <ManageTreatments />,
         loader: () => fetch("http://localhost:3000/treatments"),
       },
+      {
+        path: "manage-treatments/update-treatment/:id",
+        element: <UpdateTreatment />,
+        loader: async ({ params }) =>
+          await fetch(`http://localhost:3000/treatment/${params.id}`),
+      },
+
       {
         path: "profile",
         element: <UserProfile />,
@@ -96,6 +111,7 @@ const router = createBrowserRouter([
       {
         path: "all-user",
         element: <AllUser />,
+        loader: () => fetch("http://localhost:3000/users"),
       },
     ],
   },

@@ -1,7 +1,21 @@
-import React from "react";
+import BlogCard from "../../components/BlogCard";
+import { useLoaderData } from "react-router-dom";
 
 const Blogs = () => {
-  return <div></div>;
+  const blogs = useLoaderData();
+  console.log(blogs);
+  return (
+    <div className="my-20 lg:w-[80%] mx-auto min-h-screen">
+      <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
+        Recent Blogs
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
+        {blogs.map((blog) => (
+          <BlogCard key={blog._id} blog={blog} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Blogs;

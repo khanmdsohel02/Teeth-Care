@@ -1,18 +1,16 @@
-import React from "react";
-
-const BlogCard = () => {
+/* eslint-disable react/prop-types */
+const BlogCard = ({ blog }) => {
   return (
-    <div className="card card-compact w-96 bg-blue-400 shadow-2xl">
+    <div className="card card-compact w-full md:w-auto bg-blue-400 shadow-2xl text-slate-200">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
+        <img className="w-full bg-cover" src={blog?.photo} alt="photo" />
       </figure>
       <div className="card-body">
-        <small className="card-title">date!</small>
-        <h2 className="card-title">Question!</h2>
-        <p>QuestionAnswer</p>
+        <small className="text-sm text-blue-700 font-medium">
+          {blog?.createdDate}
+        </small>
+        <h2 className="card-title text-3xl">{blog?.question}</h2>
+        <p className="text-xl">{blog?.qanswer}</p>
       </div>
     </div>
   );

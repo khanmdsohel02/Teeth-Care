@@ -4,21 +4,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Contact from "../Contact/Contact";
 import TreatmentCard from "../../components/TreatmentCard";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import ReviewCard from "../../components/ReviewCard";
 
 const Home = () => {
-  // const [treatments, setTreatments] = useState();
+  const [blogs, setBlogs] = useState();
+  const [reviews, setReviews] = useState();
+  console.log(reviews);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/treatments")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setTreatments(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:3000/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setBlogs(data);
+      });
 
-  // console.log(treatments);
+    fetch("http://localhost:3000/reviews")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setReviews(data);
+      });
+  }, []);
+
+  console.log(blogs);
 
   const treatments = useLoaderData();
   console.log(treatments);
@@ -83,7 +93,7 @@ const Home = () => {
           Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
-          {treatments.slice(0, 3).map((treatment) => (
+          {treatments?.slice(0, 3).map((treatment) => (
             <TreatmentCard key={treatment._id} treatment={treatment} />
           ))}
         </div>
@@ -97,14 +107,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="my-20 w-[80%] mx-auto">
+      <div className="my-20 lg:w-[80%] mx-auto">
         <h1 className="mb-14 text-5xl text-center text-gray-600">
           Recent Blogs
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
+          {blogs?.slice(0, 3).map((blog) => (
+            <BlogCard key={blog._id} blog={blog} />
+          ))}
         </div>
         <div className="flex justify-center mt-16">
           <Link
@@ -123,20 +133,15 @@ const Home = () => {
 
         <Swiper
           modules={[Pagination]}
-          spaceBetween={30}
+          spaceBetween={40}
           slidesPerView={1}
           pagination={{ clickable: true }}
+          className=" flex justify-center items-center p-4"
         >
-          <SwiperSlide className="testimonial">
-            <div className="client-img">
-              <img src="" alt="client" />
-            </div>
-            <div className="client-review">
-              <h1></h1>
-              <p></p>
-              <p></p>
-            </div>
-          </SwiperSlide>
+          {" "}
+          {reviews?.map((review) => (
+            <ReviewCard key={review._id} review={review} />
+          ))}
         </Swiper>
       </div>
 
@@ -146,3 +151,7 @@ const Home = () => {
 };
 
 export default Home;
+
+{
+  /*  */
+}
