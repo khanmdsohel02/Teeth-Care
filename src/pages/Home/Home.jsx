@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCard";
-import ServiceCard from "../../components/ServiceCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Contact from "../Contact/Contact";
+import TreatmentCard from "../../components/TreatmentCard";
 
 const Home = () => {
   return (
@@ -63,12 +63,12 @@ const Home = () => {
 
       <div className="p-14  bg-gradient-to-br	from-blue-400 to-blue-700">
         <h1 className="mb-14 text-5xl text-center text-blue-100">
-          Our Services
+          Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
+          <TreatmentCard />
+          <TreatmentCard />
+          <TreatmentCard />
         </div>
       </div>
 

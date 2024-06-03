@@ -14,16 +14,34 @@ const Dashboard = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"manage-services"}>Manage Services</NavLink>
+        <NavLink className="hover:bg-blue-800" to={"manage-services"}>
+          Manage Services
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"profile"}>Profilr</NavLink>
+        <NavLink className="hover:bg-blue-800" to={"profile"}>
+          Profilr
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"add-service"}>Add Service</NavLink>
+        <NavLink className="hover:bg-blue-800" to={"add-service"}>
+          Add Service
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"create-blog"}>Create Blog</NavLink>
+        <NavLink className="hover:bg-blue-800" to={"create-blog"}>
+          Create Blog
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-blue-800" to={"add-review"}>
+          Add Review
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-blue-800" to={"all-user"}>
+          All User
+        </NavLink>
       </li>
     </>
   );
@@ -51,10 +69,10 @@ const Dashboard = () => {
           {/* Sidebar content here */}
           <div className="text-lg font-semibold text-stone-100">{links}</div>
           <div className="flex justify-between">
-            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-red-600">
+            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-blue-800">
               <Link to="/">Go To Home</Link>
             </li>
-            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-red-600">
+            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-blue-800">
               <button onClick={Signout}>LogOut</button>
             </li>
           </div>

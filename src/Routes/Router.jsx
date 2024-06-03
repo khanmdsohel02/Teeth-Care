@@ -15,6 +15,8 @@ import UserProfile from "../components/UserProfile";
 import AddService from "../pages/Dashboard/AddService";
 import CreateBlog from "../pages/Dashboard/CreateBlog";
 import UpdateProfile from "../components/UpdateProfile";
+import AddReview from "../pages/Dashboard/AddReview";
+import AllUser from "../pages/Dashboard/AllUser";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +92,14 @@ const router = createBrowserRouter([
       {
         path: "create-blog",
         element: <CreateBlog />,
+      },
+      {
+        path: "add-review",
+        element: <AddReview />,
+      },
+      {
+        path: "all-user",
+        element: <AllUser />,
       },
     ],
   },

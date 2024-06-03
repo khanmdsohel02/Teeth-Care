@@ -10,8 +10,9 @@ const BlogCard = () => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <small className="card-title">date!</small>
+        <h2 className="card-title">Question!</h2>
+        <p>QuestionAnswer</p>
       </div>
     </div>
   );

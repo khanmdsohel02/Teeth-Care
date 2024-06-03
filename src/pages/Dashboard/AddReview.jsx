@@ -1,29 +1,29 @@
-const CreateBlog = () => {
-  const handleCreateBlog = (e) => {
+const AddReview = () => {
+  const handleAddReview = (e) => {
     e.preventDefault();
     const form = e.target;
-    const question = form.question.value;
-    const qanswer = form.qanswer.value;
+    const title = form.title.value;
+    const review = form.review.value;
     const photo = form.photo.value;
 
-    const blog = { question, qanswer, photo };
+    const blog = { title, review, photo };
     console.log(blog);
   };
   return (
     <div className="lg:w-[60%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
-      <form onSubmit={handleCreateBlog} className="grid gap-5">
+      <form onSubmit={handleAddReview} className="grid gap-5">
         <input
-          name="question"
+          name="title"
           type="text"
           className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
-          placeholder="Question?"
+          placeholder="Review Title ?"
         />
 
         <textarea
-          name="qanswer"
+          name="review"
           type="text"
           className="h-40 w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
-          placeholder="QAnswer ..."
+          placeholder="About Review ..."
         />
 
         <input
@@ -37,11 +37,10 @@ const CreateBlog = () => {
           type="submit"
           className="btn text-slate-200 pb-2 pt-1 text-2xl bg-transparent border-slate-200 hover:border-none hover:bg-blue-600"
         >
-          Create Blog
+          Add Review
         </button>
       </form>
     </div>
   );
 };
-
-export default CreateBlog;
+export default AddReview;
