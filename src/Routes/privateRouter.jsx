@@ -1,5 +1,5 @@
-const privateRouter = () => {
+const PrivateRouter = () => {
   return <div></div>;
 };
 
-export default privateRouter;
+export default PrivateRouter;
