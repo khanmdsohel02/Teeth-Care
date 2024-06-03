@@ -1,11 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import BlogCard from "../../components/BlogCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Contact from "../Contact/Contact";
 import TreatmentCard from "../../components/TreatmentCard";
+// import { useEffect, useState } from "react";
 
 const Home = () => {
+  // const [treatments, setTreatments] = useState();
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/treatments")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setTreatments(data);
+  //     });
+  // }, []);
+
+  // console.log(treatments);
+
+  const treatments = useLoaderData();
+  console.log(treatments);
+
   return (
     <>
       <div className="hero min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
@@ -66,9 +83,17 @@ const Home = () => {
           Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
-          <TreatmentCard />
-          <TreatmentCard />
-          <TreatmentCard />
+          {treatments.slice(0, 3).map((treatment) => (
+            <TreatmentCard key={treatment._id} treatment={treatment} />
+          ))}
+        </div>
+        <div className="flex justify-center mt-16">
+          <Link
+            className="btn bg-blue-600 text-slate-100 text-xl hover:bg-blue-700"
+            to="/treatments"
+          >
+            See More
+          </Link>
         </div>
       </div>
 

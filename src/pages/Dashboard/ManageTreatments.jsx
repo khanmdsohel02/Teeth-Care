@@ -1,9 +1,13 @@
-import React from "react";
+import { useLoaderData } from "react-router-dom";
+import SingleTreatment from "../../components/SingleTreatment";
 
-const ManageServices = () => {
+const ManageTreatments = () => {
+  const treatments = useLoaderData();
+  console.log(treatments);
+
   return (
-    <div className="text-3xl text-slate-900">
-      <div className="w-full">
+    <div className="text-3xl">
+      <div className="lg:w-full">
         <h1 className="text-5xl font-bold text-center mb-10 text-slate-200">
           Manage Treatment
         </h1>
@@ -20,7 +24,16 @@ const ManageServices = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody className="text-center">{/* rows */}</tbody>
+            <tbody className="text-center">
+              {/* row 1 */}
+              {treatments.map((treatment, index) => (
+                <SingleTreatment
+                  key={treatment._id}
+                  treatment={treatment}
+                  index={index}
+                />
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
@@ -28,4 +41,4 @@ const ManageServices = () => {
   );
 };
 
-export default ManageServices;
+export default ManageTreatments;

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
+import { useContext } from "react";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { user, loading, logOut } = useContext(AuthContext);
+  const { logOut } = useContext(AuthContext);
 
   const Signout = () => {
     logOut();
@@ -14,8 +14,8 @@ const Dashboard = () => {
   const links = (
     <>
       <li>
-        <NavLink className="hover:bg-blue-800" to={"manage-services"}>
-          Manage Services
+        <NavLink className="hover:bg-blue-800" to={"manage-treatments"}>
+          Manage Treatments
         </NavLink>
       </li>
       <li>
@@ -24,8 +24,8 @@ const Dashboard = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="hover:bg-blue-800" to={"add-service"}>
-          Add Service
+        <NavLink className="hover:bg-blue-800" to={"add-treatment"}>
+          Add Treatment
         </NavLink>
       </li>
       <li>

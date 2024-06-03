@@ -1,5 +1,7 @@
-const AddService = () => {
-  const handleAddService = (e) => {
+import { toast } from "react-toastify";
+
+const AddTreatment = () => {
+  const handleAddTreatment = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -7,12 +9,36 @@ const AddService = () => {
     const about = form.about.value;
     const photo = form.photo.value;
 
+    const isConfirm = window.confirm(
+      `Are you sure? You want to add ${name} treatment`
+    );
+
+    console.log(isConfirm);
+
     const treatment = { name, cost, about, photo };
     console.log(treatment);
+
+    if (isConfirm) {
+      fetch("http://localhost:3000/treatment", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(treatment),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            toast.success("Added successfully");
+            form.reset();
+          }
+        });
+    }
   };
   return (
     <div className="lg:w-[60%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
-      <form onSubmit={handleAddService} className="grid gap-5">
+      <form onSubmit={handleAddTreatment} className="grid gap-5">
         <input
           name="name"
           type="text"
@@ -50,4 +76,4 @@ const AddService = () => {
   );
 };
 
-export default AddService;
+export default AddTreatment;

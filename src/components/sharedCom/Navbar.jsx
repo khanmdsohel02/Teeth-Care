@@ -25,9 +25,9 @@ const Navbar = () => {
       <li>
         <NavLink
           className="text-white text-lg font-semibold hover:bg-blue-700"
-          to="/services"
+          to="/treatments"
         >
-          Services
+          Treatments
         </NavLink>
       </li>
       <li>
