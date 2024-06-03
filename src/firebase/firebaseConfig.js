@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.REACT_APP_FIREBASE_apiKey,
-  authDomain: import.meta.env.REACT_APP_FIREBASE_authDomain,
-  projectId: import.meta.env.REACT_APP_FIREBASE_projectId,
-  storageBucket: import.meta.env.REACT_APP_FIREBASE_storageBucket,
-  messagingSenderId: import.meta.env.REACT_APP_FIREBASE_messagingSenderId,
-  appId: import.meta.env.REACT_APP_FIREBASE_appId,
+  apiKey: "AIzaSyBQLPX0drTiBNC6JRSaV-VIpzNLhPN6VMQ",
+  authDomain: "teethcare-88f79.firebaseapp.com",
+  projectId: "teethcare-88f79",
+  storageBucket: "teethcare-88f79.appspot.com",
+  messagingSenderId: "1035472265958",
+  appId: "1:1035472265958:web:3759a56261145b7ba35127",
 };
 
 const app = initializeApp(firebaseConfig);

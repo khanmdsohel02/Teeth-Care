@@ -1,7 +1,17 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import ContactNav from "./ContactNav";
+import { useContext } from "react";
+import { AuthContext } from "../../ContextProvider/AuthProvider";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+    navigate("/login");
+  };
+
   const links = (
     <>
       <li>
@@ -36,12 +46,22 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            className="text-white text-lg font-semibold hover:bg-blue-700"
+            to="dashboard"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
     <>
       <div className=" navbar bg-gradient-to-r from-blue-700 to-blue-400 h-20 fixed top-0 left-0 z-[100] shadow-lg">
-        <div className="navbar w-[80%] mx-auto">
+        <div className="navbar lg:w-[80%] mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -69,6 +89,15 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow rounded-b-md w-52  bg-gradient-to-b from-blue-400 to-blue-700"
               >
                 {links}
+                <li>
+                  {" "}
+                  <Link
+                    to="/appointment"
+                    className=" md:hidden pt-2 btn bg-blue-700 hover:bg-blue-900 text-white text-lg font-semibold border-none"
+                  >
+                    Booked
+                  </Link>
+                </li>
               </ul>
             </div>
             <Link to="/" className="text-2xl h-20 w-24">
@@ -85,16 +114,32 @@ const Navbar = () => {
           <div className="navbar-end space-x-3">
             <Link
               to="/appointment"
-              className="btn bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
+              className="hidden md:block pt-2 btn bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
             >
               Booked
             </Link>
-            <Link
-              to="/login"
-              className="btn bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
-            >
-              Login
-            </Link>
+            {user ? (
+              <>
+                <button
+                  onClick={handleLogOut}
+                  className="btn bg-red-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
+                >
+                  Logout
+                </button>
+                <div className="avatar online">
+                  <div className="w-14 rounded-full">
+                    <img className="w-full" src={user?.photoURL} />
+                  </div>
+                </div>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="btn bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>
