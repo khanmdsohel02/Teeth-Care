@@ -38,10 +38,10 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.token);
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data?.token);
 
-        if (data.message) {
-          toast.success(data.message);
+        if (data?.message) {
+          toast.success(data?.message);
           form.reset();
           navigate(location?.state ? location.state : "/");
         }

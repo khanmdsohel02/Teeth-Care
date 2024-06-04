@@ -52,8 +52,8 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        localStorage.setItem("token", data.token);
-        if (data.result.acknowledged) {
+        localStorage.setItem("token", data?.token);
+        if (data?.result?.acknowledged) {
           toast.success(`${fname} welcome to Teeth Care!`);
           form.reset();
           navigate(location?.state ? location.state : "/");
