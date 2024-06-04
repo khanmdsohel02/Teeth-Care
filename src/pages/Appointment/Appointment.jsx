@@ -5,6 +5,8 @@ import { AuthContext } from "../../ContextProvider/AuthProvider";
 const Appointment = () => {
   const [treatment, setTreatment] = useState({});
   const [selectedDate, setSelectedDate] = useState("");
+  const [phNum, setPhNum] = useState("");
+
   console.log(selectedDate);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ const Appointment = () => {
     treatment: treatment.name,
     treatmentCost: treatment.cost,
     appointDate: selectedDate,
+    phNum,
     whenAppoint,
   };
   console.log(appointdata);
@@ -78,6 +81,13 @@ const Appointment = () => {
           readOnly={true}
         />
 
+        <input
+          name="phonenumber"
+          type="number"
+          className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium "
+          placeholder="Phone Number"
+          onChange={(e) => setPhNum(e.target.value)}
+        />
         <input
           name="appointdate"
           type="date"

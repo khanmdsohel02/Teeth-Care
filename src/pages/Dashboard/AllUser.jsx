@@ -9,7 +9,7 @@ const AllUser = () => {
       <table className="table text-slate-200 bg-blue-600 rounded-none">
         {/* head */}
         <thead>
-          <tr>
+          <tr className="bg-blue-700">
             <th className=" bg-blue-700 text-slate-200 text-xl font-semibold">
               S.No
             </th>

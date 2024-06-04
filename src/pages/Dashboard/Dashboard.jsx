@@ -43,6 +43,11 @@ const Dashboard = () => {
           All User
         </NavLink>
       </li>
+      <li>
+        <NavLink className="hover:bg-blue-800" to={"all-appointments"}>
+          All Appointments
+        </NavLink>
+      </li>
     </>
   );
   return (

@@ -98,9 +98,12 @@ const Home = () => {
           Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
-          {treatments?.slice(0, 3).map((treatment) => (
-            <TreatmentCard key={treatment._id} treatment={treatment} />
-          ))}
+          {treatments
+            ?.toReversed()
+            .slice(0, 3)
+            .map((treatment) => (
+              <TreatmentCard key={treatment._id} treatment={treatment} />
+            ))}
         </div>
         <div className="flex justify-center mt-16">
           <Link
@@ -117,9 +120,12 @@ const Home = () => {
           Recent Blogs
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
-          {blogs?.slice(0, 3).map((blog) => (
-            <BlogCard key={blog._id} blog={blog} />
-          ))}
+          {blogs
+            ?.toReversed()
+            .slice(0, 2)
+            .map((blog) => (
+              <BlogCard key={blog._id} blog={blog} />
+            ))}
         </div>
         <div className="flex justify-center mt-16">
           <Link

@@ -15,7 +15,7 @@ const ManageTreatments = () => {
           <table className="table text-slate-200 bg-blue-600 rounded-none">
             {/* head */}
             <thead className="text-center text-xl text-slate-200">
-              <tr>
+              <tr className="bg-blue-700">
                 <th>S.No</th>
                 <th>Treatment Name</th>
                 <th>Treatment Cost</th>

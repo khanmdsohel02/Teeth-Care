@@ -10,10 +10,12 @@ const TreatmentCard = ({ treatment }) => {
       <figure className="px-10 pt-10">
         <img src={photo} alt="Shoes" className="rounded-xl w-[100%]" />
       </figure>
-      <div className="card-body items-center text-center text-slate-100 space-y-2">
-        <h2 className="card-title text-4xl">{name}</h2>
-        <h4 className="card-title text-blue-900">Taka:{cost}</h4>
-        <p className="text-xl">{about}</p>
+      <div className="card-body items-center  text-slate-100 space-y-2">
+        <h4 className=" font-semibold text-blue-900 text-center">
+          Taka:{cost}
+        </h4>
+        <h2 className="card-title text-4xl text-center">{name}</h2>
+        <p className="text-xl text-wrap">{about}</p>
         <div className="card-actions mt-4">
           <Link
             to={`appointment/${id}`}

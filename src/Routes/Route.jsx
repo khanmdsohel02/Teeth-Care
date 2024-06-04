@@ -18,6 +18,7 @@ import Treatments from "../pages/Treatments/Treatments";
 import ManageTreatments from "../pages/Dashboard/ManageTreatments";
 import UpdateTreatment from "../components/UpdateTreatment";
 import PrivateRoute from "./PrivateRoute";
+import AllAppointments from "../pages/Dashboard/AllAppointments";
 
 const router = createBrowserRouter([
   {
@@ -128,6 +129,12 @@ const router = createBrowserRouter([
         path: "all-user",
         element: <AllUser />,
         loader: () => fetch("https://teeth-care-backend.vercel.app/users"),
+      },
+      {
+        path: "all-appointments",
+        element: <AllAppointments />,
+        loader: () =>
+          fetch("https://teeth-care-backend.vercel.app/appointments"),
       },
     ],
   },
