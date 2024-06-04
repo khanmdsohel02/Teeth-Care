@@ -7,7 +7,6 @@ import Contact from "../pages/Contact/Contact";
 import Appointment from "../pages/Appointment/Appointment";
 import Login from "../components/authentication/Login";
 import Register from "../components/authentication/Register";
-import PrivateRouter from "./PrivateRouter";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import UserProfile from "../components/UserProfile";
 import CreateBlog from "../pages/Dashboard/CreateBlog";
@@ -18,6 +17,7 @@ import AddTreatment from "../pages/Dashboard/AddTreatment";
 import Treatments from "../pages/Treatments/Treatments";
 import ManageTreatments from "../pages/Dashboard/ManageTreatments";
 import UpdateTreatment from "../components/UpdateTreatment";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {

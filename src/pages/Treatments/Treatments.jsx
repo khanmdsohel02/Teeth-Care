@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import TreatmentCard from "../../components/TreatmentCard";
+import { useContext } from "react";
+import { AuthContext } from "../../ContextProvider/AuthProvider";
 // import { useEffect, useState } from "react";
 
 const Treatments = () => {
