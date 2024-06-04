@@ -105,7 +105,7 @@ const Navbar = () => {
             <Link to="/" className="text-2xl h-20 w-24">
               <img
                 className="h-full w-full"
-                src="../../../public/assets/logo.png"
+                src="https://i.ibb.co/CWFQYmM/logo.png"
                 alt="mainLogo"
               />
             </Link>

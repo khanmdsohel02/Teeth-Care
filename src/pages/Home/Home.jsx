@@ -38,7 +38,7 @@ const Home = () => {
       <div className="hero min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
         <div className="hero-content w-full flex-col lg:flex-row-reverse gap-x-[10%]">
           <img
-            src="../../../public/assets/header.svg"
+            src="https://i.ibb.co/zFgmsc2/header.jpg"
             className="max-w-xl rounded-lg shadow-lg"
           />
           <div>
@@ -67,7 +67,7 @@ const Home = () => {
       <div className="hero my-20">
         <div className="hero-content flex-col-reverse lg:flex-row gap-x-[10%]">
           <img
-            src="../../../public/assets/WPic.png"
+            src="https://i.ibb.co/YW6FqHh/WPic.png"
             className="lg:max-w-2xl rounded-lg shadow-2xl bg-blue-400"
           />
           <div className="space-y-6 text-gray-600">
@@ -126,7 +126,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mb-20 mt-28 w-[80%] mx-auto bg-bg-ima p-14 rounded-lg shadow-lg bg-cover bg-center">
+      <div className="mb-20 mt-28 w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
         <h1 className="mb-14 text-5xl text-center font-semibold text-blue-500">
           What is Patients says!
         </h1>

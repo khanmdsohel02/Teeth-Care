@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "bg-ima": "url('./public/assets/bg.webp')",
+        "bg-img": "url('https://i.ibb.co/8bxx9Qf/bg.png')",
       },
     },
   },
