@@ -19,7 +19,6 @@ const SingleTreatment = ({ treatment, index }) => {
           console.log(data);
           if (data.deletedCount > 0) {
             toast.success("Treatment deleted successfully");
-            window.location.reload();
           }
         });
     }
