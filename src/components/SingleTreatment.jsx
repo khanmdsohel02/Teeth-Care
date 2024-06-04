@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SingleTreatment = ({ treatment, index }) => {
+  const navigate = useNavigate();
   const { _id: id, name, cost, about, photo } = treatment;
 
   const handleDeleteProduct = async (id) => {
@@ -19,6 +20,7 @@ const SingleTreatment = ({ treatment, index }) => {
           console.log(data);
           if (data.deletedCount > 0) {
             toast.success("Treatment deleted successfully");
+            navigate("/manage-treatments");
           }
         });
     }
