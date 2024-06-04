@@ -56,7 +56,8 @@ const Login = () => {
         const fName = user?.displayName;
         const photo = user?.photoURL;
         const email = user?.email;
-        const googleUserInfo = { fName, photo, email };
+        const PhNum = "";
+        const googleUserInfo = { fName, photo, email, PhNum };
 
         handlGoogleUserData(googleUserInfo);
 

@@ -23,17 +23,17 @@ const UpdateProfile = () => {
     const isConfirm = window.confirm("All informations are correct?");
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const email = form.email.value;
+    const fName = form.name.value;
     const photo = form.photo.value;
     const PhNum = form.phnumber.value;
 
-    const userInfo = { name, photo, PhNum };
+    const userInfo = { email, fName, photo, PhNum };
 
     console.log(PhNum);
     if (isConfirm) {
-      updateUserInfo(name, photo)
+      updateUserInfo(fName, photo)
         .then(() => {
-          navigate(-1);
           console.log("User info updated successfully");
         })
         .catch((error) => {
@@ -50,6 +50,7 @@ const UpdateProfile = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           if (data.acknowledged) {
             toast.success("User info updated successfully");
             form.reset();
@@ -74,14 +75,14 @@ const UpdateProfile = () => {
           name="email"
           type="email"
           className="w-full input input-bordered text-xl  text-blue-900 font-medium"
-          defaultValue={user?.email}
+          defaultValue={user?.email || userAllInfo?.email}
           disabled
         />
         <input
           name="name"
           type="text"
           className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
-          defaultValue={user?.displayName}
+          defaultValue={user?.displayName || userAllInfo?.fName}
         />
         <input
           name="phnumber"
@@ -95,7 +96,7 @@ const UpdateProfile = () => {
           name="photo"
           type="text"
           className="w-full input input-bordered text-xl font-medium bg-blue-100 text-blue-900"
-          defaultValue={user?.photoURL}
+          defaultValue={user?.photoURL || userAllInfo?.photo}
         />
 
         <button

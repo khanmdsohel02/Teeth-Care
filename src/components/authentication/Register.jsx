@@ -15,19 +15,20 @@ const Register = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const fname = form.username.value;
+    const fName = form.username.value;
     const photo = form.photo.value;
+    const PhNum = "";
     // console.log(email, password, fname, photo);
-    const userInfo = { email, password, fname, photo };
+    const userInfo = { email, password, fName, photo, PhNum };
 
-    createNewUser(email, password, fname, photo)
+    createNewUser(email, password, fName, photo)
       .then((result) => {
         const user = result.user;
         // console.log(user);
 
         // Update the user profile
         return updateProfile(user, {
-          displayName: fname,
+          displayName: fName,
           photoURL: photo,
         }).then(() => {
           console.log("User registered:", user);
@@ -54,7 +55,7 @@ const Register = () => {
       .then((data) => {
         localStorage.setItem("token", data?.token);
         if (data?.result?.acknowledged) {
-          toast.success(`${fname} welcome to Teeth Care!`);
+          toast.success(`${fName} welcome to Teeth Care!`);
           form.reset();
           navigate(location?.state ? location.state : "/");
         }
@@ -65,12 +66,13 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-       
+
         navigate(location?.state ? location.state : "/");
         const fName = user?.displayName;
         const photo = user?.photoURL;
         const email = user?.email;
-        const googleUserInfo = { fName, photo, email };
+        const PhNum = "";
+        const googleUserInfo = { fName, photo, email, PhNum };
 
         handlGoogleUserData(googleUserInfo);
 

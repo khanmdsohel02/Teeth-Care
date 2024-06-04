@@ -31,7 +31,7 @@ const UserProfile = () => {
       <div className="card-body items-center text-center text-red-500">
         <p className="text-lg text-slate-100">{userAllInfo?.PhNum}</p>
         <h2 className="card-title  text-3xl font-semibold text-slate-100">
-          {user?.displayName}
+          {user?.displayName || userAllInfo?.fName}
         </h2>
         <p className="text-xl text-slate-100">
           {user?.email || userAllInfo?.email}
