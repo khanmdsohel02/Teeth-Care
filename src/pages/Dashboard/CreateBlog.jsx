@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const CreateBlog = () => {
   const navigate = useNavigate();
   const handleCreateBlog = (e) => {
+    const token = localStorage.getItem("token");
     e.preventDefault();
     const form = e.target;
     const question = form.question.value;
@@ -23,6 +24,7 @@ const CreateBlog = () => {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(blog),
       })

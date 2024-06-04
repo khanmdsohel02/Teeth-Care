@@ -22,6 +22,9 @@ const AllUser = () => {
             <th className=" bg-blue-700 text-slate-200 text-xl font-semibold">
               Email
             </th>
+            <th className=" bg-blue-700 text-slate-200 text-xl font-semibold">
+              Phone Number
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -19,6 +19,8 @@ const UpdateProfile = () => {
   }, [user]);
 
   const handleUserUpdateInfo = (e) => {
+    const token = localStorage.getItem("token");
+    console.log(token);
     const isConfirm = window.confirm("All informations are correct?");
     e.preventDefault();
     const form = e.target;
@@ -43,6 +45,7 @@ const UpdateProfile = () => {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(userInfo),
       })

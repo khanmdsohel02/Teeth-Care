@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 
 const AddTreatment = () => {
   const handleAddTreatment = (e) => {
+    const token = localStorage.getItem("token");
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -23,6 +24,7 @@ const AddTreatment = () => {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(treatment),
       })

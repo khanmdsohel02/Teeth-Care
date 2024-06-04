@@ -18,6 +18,7 @@ const UpdateTreatment = () => {
       });
   }, [id]);
   const handleUpdateTreatment = (e) => {
+    const token = localStorage.getItem("token");
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -35,6 +36,7 @@ const UpdateTreatment = () => {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(updateInfo),
       })

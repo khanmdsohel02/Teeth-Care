@@ -7,6 +7,7 @@ const SingleTreatment = ({ treatment, index }) => {
   const { _id: id, name, cost, about, photo } = treatment;
 
   const handleDeleteProduct = async (id) => {
+    const token = localStorage.getItem("token");
     const isConfirm = window.confirm(
       `Are you sure? You want to delete ${name}`
     );
@@ -14,6 +15,9 @@ const SingleTreatment = ({ treatment, index }) => {
     if (isConfirm) {
       await fetch(`http://localhost:3000/treatment/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {

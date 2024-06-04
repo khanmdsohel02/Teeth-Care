@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const AddReview = () => {
   const navigate = useNavigate();
   const handleAddReview = (e) => {
+    const token = localStorage.getItem("token");
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -23,6 +24,7 @@ const AddReview = () => {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(reviewData),
       })
