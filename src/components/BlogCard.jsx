@@ -3,7 +3,11 @@ const BlogCard = ({ blog }) => {
   return (
     <div className="card card-compact w-full md:w-auto bg-blue-400 shadow-2xl text-slate-200">
       <figure>
-        <img className="w-full bg-cover" src={blog?.photo} alt="photo" />
+        <img
+          className="max-h-[400px] max-w-[700px] bg-cover"
+          src={blog?.photo}
+          alt="photo"
+        />
       </figure>
       <div className="card-body">
         <small className="text-sm text-blue-700 font-medium">
