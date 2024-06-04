@@ -40,7 +40,7 @@ const CreateBlog = () => {
     }
   };
   return (
-    <div className="lg:w-[60%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
+    <div className="lg:w-[70%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
       <form onSubmit={handleCreateBlog} className="grid gap-5">
         <input
           name="question"

@@ -51,6 +51,20 @@ const router = createBrowserRouter([
         path: "appointment",
         element: <Appointment />,
       },
+
+      {
+        path: "treatments/appointment/:id",
+        element: <Appointment />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/treatment/${params.id}`),
+      },
+      {
+        path: "appointment/:id",
+        element: <Appointment />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/treatment/${params.id}`),
+      },
+
       {
         path: "login",
         element: <Login />,

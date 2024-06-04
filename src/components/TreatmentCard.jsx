@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 const TreatmentCard = ({ treatment }) => {
-  const { name, cost, about, photo } = treatment;
+  const { _id: id, name, cost, about, photo } = treatment;
   console.log(name, cost, about, photo);
 
   return (
@@ -16,7 +16,7 @@ const TreatmentCard = ({ treatment }) => {
         <p className="text-xl">{about}</p>
         <div className="card-actions mt-4">
           <Link
-            to={"/appointments"}
+            to={`appointment/${id}`}
             className="btn bg-blue-600 text-white text-lg hover:bg-blue-700 border-none"
           >
             Appointment

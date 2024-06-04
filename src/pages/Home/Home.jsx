@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import BlogCard from "../../components/BlogCard";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Contact from "../Contact/Contact";
 import TreatmentCard from "../../components/TreatmentCard";
@@ -10,7 +10,6 @@ import ReviewCard from "../../components/ReviewCard";
 const Home = () => {
   const [blogs, setBlogs] = useState();
   const [reviews, setReviews] = useState();
-  console.log(reviews);
 
   useEffect(() => {
     fetch("https://teeth-care-backend.vercel.app/blogs")
@@ -39,10 +38,10 @@ const Home = () => {
         <div className="hero-content w-full flex-col lg:flex-row-reverse gap-x-[10%]">
           <img
             src="https://i.ibb.co/zFgmsc2/header.jpg"
-            className="max-w-xl rounded-lg shadow-lg"
+            className="lg:max-w-xl rounded-lg shadow-lg"
           />
           <div>
-            <h1 className="text-5xl text-slate-100 font-bold capitalize">
+            <h1 className="lg:text-5xl text-2xl text-slate-100 font-bold capitalize">
               complete dental solution for everyone!
             </h1>
             <p className="py-6 text-xl text-slate-100">
@@ -55,10 +54,10 @@ const Home = () => {
               with a complimentary oral health consultation.
             </p>
             <Link
-              to={"/appointments"}
+              to={"treatments"}
               className="btn btn-primary text-slate-100 text-lg"
             >
-              Get Appointments
+              See All Treatments
             </Link>
           </div>
         </div>
@@ -70,26 +69,32 @@ const Home = () => {
             src="https://i.ibb.co/YW6FqHh/WPic.png"
             className="lg:max-w-2xl rounded-lg shadow-2xl bg-blue-400"
           />
-          <div className="space-y-6 text-gray-600">
+          <div className="space-y-6 text-blue-500">
             <h3 className="text-xl font-semibold uppercase">
               WELCOME TO Teeth DENTAL CARE!
             </h3>
-            <h1 className="text-5xl font-bold">We Create Beautiful Smiles</h1>
+            <h1 className="lg:text-5xl text-3xl  font-bold">
+              We Create Beautiful Smiles
+            </h1>
             <p className="py-6 text-xl">
-              Dentalia is a modern dental clinic, specialized in advanced
-              diagnostics and treatment of dental and oral disorders.
-              <br /> <br />
-              We offer comprehensive services from all fields of dentistry. In
-              addition to high-end dental equipment, all services are provided
-              in a comfortable, luxury environment. New patients are welcomed
-              with a complimentary oral health consultation.
+              <p>
+                Dentalia is a modern dental clinic, specialized in advanced
+                diagnostics and treatment of dental and oral disorders.
+              </p>
+
+              <p className="pt-5">
+                We offer comprehensive services from all fields of dentistry. In
+                addition to high-end dental equipment, all services are provided
+                in a comfortable, luxury environment. New patients are welcomed
+                with a complimentary oral health consultation.
+              </p>
             </p>
           </div>
         </div>
       </div>
 
       <div className="p-14  bg-gradient-to-br	from-blue-400 to-blue-700">
-        <h1 className="mb-14 text-5xl text-center text-blue-100">
+        <h1 className="mb-14 lg:text-5xl text-4xl font-semibold text-center text-slate-200">
           Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
@@ -108,7 +113,7 @@ const Home = () => {
       </div>
 
       <div className="my-20 lg:w-[80%] mx-auto">
-        <h1 className="mb-14 text-5xl text-center text-gray-600">
+        <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
           Recent Blogs
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
