@@ -8,7 +8,6 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { createNewUser, googleLogin } = useContext(AuthContext);
-  console.log(location);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,9 +16,9 @@ const Register = () => {
     const password = form.password.value;
     const fName = form.username.value;
     const photo = form.photo.value;
-    const PhNum = "";
+    // const PhNum = "";
     // console.log(email, password, fname, photo);
-    const userInfo = { email, password, fName, photo, PhNum };
+    const userInfo = { email, password, fName, photo };
 
     createNewUser(email, password, fName, photo)
       .then((result) => {
@@ -36,28 +35,32 @@ const Register = () => {
           console.log("User Name:", user.displayName);
           console.log("User Photo:", user.photoURL);
 
-          // Redirect to home page
           navigate(location?.state ? location.state : "/");
+
+          fetch(`http://localhost:3000/users/`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userInfo),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              localStorage.setItem("token", data?.token);
+              if (data?.result?.acknowledged) {
+                toast.success(`${fName} welcome to Teeth Care!`);
+                form.reset();
+                navigate(location?.state ? location.state : "/");
+              }
+            });
         });
       })
       .catch((error) => {
         console.log(error.message);
-      });
-
-    fetch(`http://localhost:3000/users/`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("token", data?.token);
-        if (data?.result?.acknowledged) {
-          toast.success(`${fName} welcome to Teeth Care!`);
-          form.reset();
-          navigate(location?.state ? location.state : "/");
+        if (error.message.includes("email-already-in-use")) {
+          toast.error("Email already in Use. Please Login.");
+        } else if (error.message.includes("weak-password")) {
+          toast.error("Password should be at least 6 characters");
         }
       });
   };
@@ -66,40 +69,37 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-
         navigate(location?.state ? location.state : "/");
         const fName = user?.displayName;
         const photo = user?.photoURL;
         const email = user?.email;
-        const PhNum = "";
-        const googleUserInfo = { fName, photo, email, PhNum };
 
-        handlGoogleUserData(googleUserInfo);
+        const googleUserInfo = { fName, photo, email };
 
-        console.log(user);
+        fetch(`http://localhost:3000/users/`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(googleUserInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("token", data?.token);
+
+            if (data?.message) {
+              toast.success(data?.message);
+              navigate(location?.state ? location.state : "/");
+            } else if (data?.result?.acknowledged) {
+              toast.success("Login successfully");
+              navigate(location?.state ? location.state : "/");
+            }
+          });
       })
       .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
-  const handlGoogleUserData = async (googleUserInfo) => {
-    console.log(googleUserInfo);
-    await fetch(`http://localhost:3000/users/`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(googleUserInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem("token", data?.token);
-
-        if (data?.message) {
-          toast.success(data?.message);
-          navigate(location?.state ? location.state : "/");
+        if (error.message.includes("popup-closed-by-user")) {
+          toast.error("Why You Do this?");
         }
       });
   };
@@ -146,8 +146,8 @@ const Register = () => {
               </span>
             </label>
             <input
-              type="passwoed"
-              placeholder="Passwoed"
+              type="password"
+              placeholder="Password"
               className="input ininput input-bordered text-xl bg-blue-100 text-blue-900"
               name="password"
               required

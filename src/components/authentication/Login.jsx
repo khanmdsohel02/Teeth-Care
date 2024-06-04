@@ -13,36 +13,42 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     const userInfo = { email, password };
 
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
-
+        console.log(user);
         navigate(location?.state ? location.state : "/");
+
+        fetch(`http://localhost:3000/users/`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("token", data?.token);
+
+            if (data?.message) {
+              toast.success(data?.message);
+              form.reset();
+              navigate(location?.state ? location.state : "/");
+            } else if (data?.result?.acknowledged) {
+              toast.success("Login successfully");
+              form.reset();
+              navigate(location?.state ? location.state : "/");
+            }
+          });
       })
       .catch((error) => {
         console.log(error.message);
-      });
-
-    fetch(`http://localhost:3000/users/`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.token);
-        localStorage.setItem("token", data?.token);
-
-        if (data?.message) {
-          toast.success(data?.message);
-          form.reset();
-          navigate(location?.state ? location.state : "/");
+        if (error.message.includes("invalid-credential")) {
+          toast.error("Invalid email or password");
         }
       });
   };
@@ -51,40 +57,37 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-
-        navigate(location?.state ? location.state : "/");
         const fName = user?.displayName;
         const photo = user?.photoURL;
         const email = user?.email;
-        const PhNum = "";
-        const googleUserInfo = { fName, photo, email, PhNum };
+        navigate(location?.state ? location.state : "/");
 
-        handlGoogleUserData(googleUserInfo);
+        const googleUserInfo = { fName, photo, email };
 
-        console.log(googleUserInfo);
+        fetch(`http://localhost:3000/users/`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(googleUserInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("token", data?.token);
+
+            if (data?.message) {
+              toast.success(data?.message);
+              navigate(location?.state ? location.state : "/");
+            } else if (data?.result?.acknowledged) {
+              toast.success("Login successfully");
+              navigate(location?.state ? location.state : "/");
+            }
+          });
       })
       .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
-  const handlGoogleUserData = async (googleUserInfo) => {
-    console.log(googleUserInfo);
-    await fetch(`http://localhost:3000/users/`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(googleUserInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem("token", data?.token);
-
-        if (data?.message) {
-          toast.success(data?.message);
-          navigate(location?.state ? location.state : "/");
+        if (error.message.includes("popup-closed-by-user")) {
+          toast.error("Why You Do this?");
         }
       });
   };
