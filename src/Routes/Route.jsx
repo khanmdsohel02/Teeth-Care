@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "about",
@@ -36,12 +36,12 @@ const router = createBrowserRouter([
       {
         path: "treatments",
         element: <Treatments />,
-        loader: () => fetch("http://localhost:3000/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "blogs",
         element: <Blogs />,
-        loader: () => fetch("http://localhost:3000/blogs"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/blogs"),
       },
       {
         path: "contact",
@@ -68,24 +68,26 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <ManageTreatments />,
-        loader: () => fetch("http://localhost:3000/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "/dashboard/update-treatment/:id",
         element: <UpdateTreatment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/treatment/${params.id}`),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
       {
         path: "manage-treatments",
         element: <ManageTreatments />,
-        loader: () => fetch("http://localhost:3000/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "manage-treatments/update-treatment/:id",
         element: <UpdateTreatment />,
         loader: async ({ params }) =>
-          await fetch(`http://localhost:3000/treatment/${params.id}`),
+          await fetch(
+            `https://teeth-care-backend.vercel.app/treatment/${params.id}`
+          ),
       },
 
       {
@@ -111,7 +113,7 @@ const router = createBrowserRouter([
       {
         path: "all-user",
         element: <AllUser />,
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/users"),
       },
     ],
   },

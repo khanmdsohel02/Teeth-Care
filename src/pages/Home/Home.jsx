@@ -13,14 +13,14 @@ const Home = () => {
   console.log(reviews);
 
   useEffect(() => {
-    fetch("http://localhost:3000/blogs")
+    fetch("https://teeth-care-backend.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setBlogs(data);
       });
 
-    fetch("http://localhost:3000/reviews")
+    fetch("https://teeth-care-backend.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

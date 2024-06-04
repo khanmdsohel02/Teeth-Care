@@ -20,7 +20,7 @@ const AddTreatment = () => {
     console.log(treatment);
 
     if (isConfirm) {
-      fetch("http://localhost:3000/treatment", {
+      fetch("https://teeth-care-backend.vercel.app/treatment", {
         method: "POST",
         headers: {
           "content-type": "application/json",
