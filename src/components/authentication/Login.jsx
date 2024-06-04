@@ -51,7 +51,7 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-        toast.success("Login successfully");
+
         navigate(location?.state ? location.state : "/");
         const fName = user?.displayName;
         const photo = user?.photoURL;

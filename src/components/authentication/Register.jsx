@@ -65,7 +65,7 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-        toast.success("Register successfully");
+       
         navigate(location?.state ? location.state : "/");
         const fName = user?.displayName;
         const photo = user?.photoURL;
