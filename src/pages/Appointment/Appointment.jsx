@@ -35,7 +35,7 @@ const Appointment = () => {
     const token = localStorage.getItem("token");
     e.preventDefault();
 
-    fetch(`http://localhost:3000/appointment`, {
+    fetch(`https://teeth-care-backend.vercel.app/appointment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

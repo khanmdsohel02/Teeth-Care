@@ -56,13 +56,13 @@ const router = createBrowserRouter([
         path: "treatments/appointment/:id",
         element: <Appointment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/treatment/${params.id}`),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
       {
         path: "appointment/:id",
         element: <Appointment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/treatment/${params.id}`),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
 
       {
