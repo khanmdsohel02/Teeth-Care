@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
+    const userInfo = { email, password };
+
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
@@ -23,6 +26,24 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+      });
+
+    fetch(`http://localhost:3000/users/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data.message) {
+          toast.success(data.message);
+          form.reset();
+          navigate(location?.state ? location.state : "/");
+        }
       });
   };
 

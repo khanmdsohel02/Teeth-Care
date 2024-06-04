@@ -2,6 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import ContactNav from "./ContactNav";
 import { useContext } from "react";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut();
+    toast.success("Thank you for visiting! Teeth Care");
     navigate("/login");
   };
 

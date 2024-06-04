@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Register = () => {
     const fname = form.username.value;
     const photo = form.photo.value;
     // console.log(email, password, fname, photo);
+    const userInfo = { email, password, fname, photo };
 
     createNewUser(email, password, fname, photo)
       .then((result) => {
@@ -39,6 +41,22 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error.message);
+      });
+
+    fetch(`http://localhost:3000/users/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success(`${fname} welcome to Teeth Care!`);
+          form.reset();
+          navigate(location?.state ? location.state : "/");
+        }
       });
   };
 
