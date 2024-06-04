@@ -13,7 +13,7 @@ const UserProfile = () => {
       .then((data) => {
         setUserAllInfo(data);
       });
-  }, [user]);
+  }, [user?.email]);
 
   return (
     <div className="card w-96 bg-blue-400 shadow-lg shadow-blue-600">

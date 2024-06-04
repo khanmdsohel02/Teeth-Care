@@ -8,7 +8,6 @@ const UpdateProfile = () => {
   const { user, updateUserInfo } = useContext(AuthContext);
 
   const [userAllInfo, setUserAllInfo] = useState({});
-  console.log(userAllInfo);
 
   useEffect(() => {
     fetch(`http://localhost:3000/users/${user?.email}`)
@@ -16,7 +15,7 @@ const UpdateProfile = () => {
       .then((data) => {
         setUserAllInfo(data);
       });
-  }, [user]);
+  }, [user?.email]);
 
   const handleUserUpdateInfo = (e) => {
     const token = localStorage.getItem("token");
@@ -27,8 +26,8 @@ const UpdateProfile = () => {
     const name = form.name.value;
     const photo = form.photo.value;
     const PhNum = form.phnumber.value;
-    const email = form.email.value;
-    const userInfo = { email, name, photo, PhNum };
+
+    const userInfo = { name, photo, PhNum };
 
     console.log(PhNum);
     if (isConfirm) {
@@ -41,8 +40,8 @@ const UpdateProfile = () => {
           console.error("Error updating user info:", error.message);
         });
 
-      fetch(`http://localhost:3000/users/`, {
-        method: "POST",
+      fetch(`http://localhost:3000/update-user/${user?.email}`, {
+        method: "PUT",
         headers: {
           "content-type": "application/json",
           authorization: `Bearer ${token}`,

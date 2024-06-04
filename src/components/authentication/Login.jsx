@@ -7,7 +7,6 @@ const Login = () => {
   const navigate = useNavigate();
   const { userLogin, googleLogin } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -52,12 +51,40 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
+        toast.success("Login successfully");
         navigate(location?.state ? location.state : "/");
+        const fName = user?.displayName;
+        const photo = user?.photoURL;
+        const email = user?.email;
+        const googleUserInfo = { fName, photo, email };
 
-        console.log(user);
+        handlGoogleUserData(googleUserInfo);
+
+        console.log(googleUserInfo);
       })
       .catch((error) => {
         console.log(error.message);
+      });
+  };
+
+  const handlGoogleUserData = async (googleUserInfo) => {
+    console.log(googleUserInfo);
+    await fetch(`http://localhost:3000/users/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(googleUserInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("token", data?.token);
+
+        if (data?.message) {
+          toast.success(data?.message);
+          navigate(location?.state ? location.state : "/");
+        }
       });
   };
 
