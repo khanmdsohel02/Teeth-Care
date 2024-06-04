@@ -2,7 +2,7 @@
 const BlogCard = ({ blog }) => {
   return (
     <div className="card card-compact w-full md:w-auto bg-blue-400 shadow-2xl text-slate-200">
-      <figure className="max-h-[400px] max-w-[700px]">
+      <figure className="max-h-[400px] max-w-[750px]">
         <img
           className="lg:w-full lg:h-full bg-cover"
           src={blog?.photo}
