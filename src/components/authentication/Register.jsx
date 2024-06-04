@@ -52,7 +52,7 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
+        if (data.result.acknowledged) {
           toast.success(`${fname} welcome to Teeth Care!`);
           form.reset();
           navigate(location?.state ? location.state : "/");
