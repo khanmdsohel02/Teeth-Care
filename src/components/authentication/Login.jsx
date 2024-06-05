@@ -111,9 +111,9 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen ">
+    <div className="hero my-5 lg:h-[75vh] ">
       <div className="card shrink-0 w-full max-w-lg shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
-        <h3 className="text-5xl font-bold text-center py-10 text-slate-100">
+        <h3 className="text-5xl font-bold text-center lg:py-10 pt-3 text-slate-100">
           LogIn Here!
         </h3>
         <form onSubmit={handleLogin} className="card-body ">
@@ -145,7 +145,7 @@ const Login = () => {
               name="password"
               required
             />
-            <label className="label mt-3">
+            <label className="label lg:mt-3">
               <button
                 onClick={handleResetPassword}
                 className="label-text-alt link link-hover text-slate-100  hover:font-semibold text-lg"
@@ -153,7 +153,7 @@ const Login = () => {
                 Forgot password?
               </button>
             </label>
-            <label className="label mt-3 lg:w-[65%] w-full text-slate-100">
+            <label className="label lg:mt-3 lg:w-[65%] w-full text-slate-100">
               <span className="text-lg"> Don&apos;t Have An Account?</span>
               <Link
                 className=" font-semibold  text-xl underline"
@@ -163,7 +163,7 @@ const Login = () => {
               </Link>
             </label>
           </div>
-          <div className="form-control mt-6">
+          <div className="form-control lg:mt-6">
             <input
               type="submit"
               value={"SignIn"}

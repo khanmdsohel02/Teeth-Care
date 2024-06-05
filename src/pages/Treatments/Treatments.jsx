@@ -22,7 +22,7 @@ const Treatments = () => {
   console.log(treatments);
 
   return (
-    <div className="p-14  min-h-screen">
+    <div className="lg:p-14 pt-7 lg:min-h-screen">
       <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
         Our Treatments
       </h1>

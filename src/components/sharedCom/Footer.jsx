@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-gradient-to-b	from-blue-700 to-blue-500 text-base-content rounded">
-      <nav className="grid grid-flow-col gap-4 text-slate-100 text-lg font-semibold">
+      <nav className="grid grid-flow-col gap-4 text-slate-100 lg:text-lg text-base font-semibold">
         <Link to="/about" className="link link-hover">
           About us
         </Link>
@@ -63,8 +63,7 @@ const Footer = () => {
       </nav>
       <aside>
         <p className="text-slate-100">
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
+          Copyright © {new Date().getFullYear()} - All right reserved Teeth Care
         </p>
       </aside>
     </footer>

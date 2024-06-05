@@ -33,13 +33,13 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <div className="hero min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
+      <div className="hero h-[70vh]  md:min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
         <div className="hero-content w-full  lg:flex-row-reverse gap-x-[10%]">
           <img
             src="https://i.ibb.co/zFgmsc2/header.jpg"
             className="lg:max-w-xl rounded-lg shadow-lg hidden lg:block"
           />
-          <div className="-mt-28">
+          <div>
             <h1 className="lg:text-5xl text-2xl text-slate-100 font-bold capitalize">
               complete dental solution for everyone!
             </h1>
@@ -62,13 +62,13 @@ const Home = () => {
         </div>
       </div>
       {/* Wellcome Message */}
-      <div className="hero my-20">
+      <div className="hero lg:my-20 my-5">
         <div className="hero-content flex-col-reverse lg:flex-row gap-x-[10%]">
           <img
             src="https://i.ibb.co/YW6FqHh/WPic.png"
             className="lg:max-w-2xl rounded-lg shadow-2xl bg-blue-400"
           />
-          <div className="space-y-6 text-blue-500">
+          <div className="lg:space-y-6 space-y-2 text-blue-500">
             <h3 className="text-xl font-semibold uppercase">
               WELCOME TO Teeth DENTAL CARE!
             </h3>
@@ -93,8 +93,8 @@ const Home = () => {
       </div>
       {/* Our Treatments
        */}
-      <div className="p-14  bg-gradient-to-br	from-blue-400 to-blue-700">
-        <h1 className="mb-14 lg:text-5xl text-4xl font-semibold text-center text-slate-200">
+      <div className="lg:py-14 py-7 bg-gradient-to-br	from-blue-400 to-blue-700">
+        <h1 className="lg:mb-14 mb-7 lg:text-5xl text-4xl font-semibold text-center text-slate-200">
           Our Treatments
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
@@ -116,8 +116,8 @@ const Home = () => {
       </div>
       {/* Recent Blogs
        */}
-      <div className="my-20 lg:w-[80%] mx-auto">
-        <h1 className="mb-16 text-5xl font-semibold text-center text-blue-600">
+      <div className="lg:my-20 my-8 lg:w-[80%] mx-auto">
+        <h1 className="lg:mb-16 mb-9 text-5xl font-semibold text-center text-blue-600">
           Recent Blogs
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
@@ -138,7 +138,7 @@ const Home = () => {
         </div>
       </div>
       {/* testimonial */}
-      <div className="mb-20 mt-28 lg:w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
+      <div className="lg:mb-20 lg:mt-28 mb-10 lg:w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
         <h1 className="mb-14 lg:text-5xl text-3xl  text-center font-semibold text-blue-500">
           Happy Patients!
         </h1>

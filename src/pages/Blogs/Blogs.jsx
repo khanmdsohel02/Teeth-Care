@@ -5,7 +5,7 @@ const Blogs = () => {
   const blogs = useLoaderData();
   console.log(blogs);
   return (
-    <div className="my-20 lg:w-[80%] mx-auto min-h-screen">
+    <div className="lg:my-20 my-10 lg:w-[80%] mx-auto min-h-screen">
       <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
         Recent Blogs
       </h1>

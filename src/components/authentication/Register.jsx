@@ -109,14 +109,14 @@ const Register = () => {
   };
 
   return (
-    <div className="hero min-h-screen">
+    <div className="hero my-5 lg:h-screen">
       <div className="card shrink-0 w-full max-w-lg shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
-        <h3 className="text-5xl font-bold text-center py-10 text-slate-100">
+        <h3 className="lg:text-5xl text-2xl font-bold text-center lg:py-10 pt-5 text-slate-100">
           Create an Account!
         </h3>
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
-            <label className="label">
+            <label className="label ">
               <span className="label-text text-lg text-slate-100">
                 User Name
               </span>
@@ -130,7 +130,7 @@ const Register = () => {
             />
           </div>
           <div className="form-control">
-            <label className="label">
+            <label className="label ">
               <span className="label-text text-lg text-slate-100">
                 Your E-mail
               </span>
@@ -144,7 +144,7 @@ const Register = () => {
             />
           </div>
           <div className="form-control">
-            <label className="label">
+            <label className="label ">
               <span className="label-text text-lg text-slate-100">
                 Passwoed
               </span>
@@ -158,7 +158,7 @@ const Register = () => {
             />
           </div>
           <div className="form-control">
-            <label className="label">
+            <label className="label ">
               <span className="label-text text-lg text-slate-100">
                 Photo URL
               </span>
@@ -171,7 +171,7 @@ const Register = () => {
               required
             />
           </div>
-          <label className="label mt-3 lg:w-[62%] w-full text-blue-400">
+          <label className="label lg:mt-3 lg:w-[62%] w-full text-blue-400">
             <span className="text-lg text-slate-100">
               {" "}
               Already Have An Account?

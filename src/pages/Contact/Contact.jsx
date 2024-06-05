@@ -34,13 +34,13 @@ const Contact = () => {
 
   return (
     <>
-      <h1 className="lg:mb-10 lg:pt-10 text-5xl font-semibold text-center text-blue-600">
+      <h1 className="lg:mb-10 lg:pt-10 pt-5 text-5xl font-semibold text-center text-blue-600">
         Contact Us
       </h1>
-      <div className="hero mb-14  lg:w-[80%] mx-auto">
+      <div className="hero lg:mb-14 mb-7 lg:w-[80%] mx-auto">
         <div className="hero-content w-full flex-col lg:flex-row lg:gap-16">
           {/* contact Form */}
-          <div className="flex-1 mt-16 card p-4 lg:p-10  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
+          <div className="flex-1 lg:mt-16 mt-5 w-[100%] card p-4 lg:p-10  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
             <form
               ref={form}
               onSubmit={handleContactData}
