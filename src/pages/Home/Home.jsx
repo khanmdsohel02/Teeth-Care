@@ -32,6 +32,7 @@ const Home = () => {
 
   return (
     <>
+      {/* Hero */}
       <div className="hero min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
         <div className="hero-content w-full flex-col lg:flex-row-reverse gap-x-[10%]">
           <img
@@ -60,7 +61,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      {/* Wellcome Message */}
       <div className="hero my-20">
         <div className="hero-content flex-col-reverse lg:flex-row gap-x-[10%]">
           <img
@@ -90,7 +91,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      {/* Our Treatments
+       */}
       <div className="p-14  bg-gradient-to-br	from-blue-400 to-blue-700">
         <h1 className="mb-14 lg:text-5xl text-4xl font-semibold text-center text-slate-200">
           Our Treatments
@@ -112,9 +114,10 @@ const Home = () => {
           </Link>
         </div>
       </div>
-
+      {/* Recent Blogs
+       */}
       <div className="my-20 lg:w-[80%] mx-auto">
-        <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
+        <h1 className="mb-16 text-5xl font-semibold text-center text-blue-600">
           Recent Blogs
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
@@ -134,7 +137,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-
+      {/* testimonial */}
       <div className="mb-20 mt-28 lg:w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
         <h1 className="mb-14 text-5xl text-center font-semibold text-blue-500">
           What Our Patients says!
@@ -146,14 +149,14 @@ const Home = () => {
           spaceBetween={50}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
+          // pagination={{ clickable: true }}
           // scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div className="w-24 mx-auto h-24">
+              <div className="max-w-40 mx-auto h-40">
                 <img
                   className="w-[100%] h-[100%] rounded-full"
                   src={review?.photo}
@@ -179,7 +182,7 @@ const Home = () => {
           ;
         </Swiper>
       </div>
-
+      {/* Contact */}
       <Contact />
     </>
   );
