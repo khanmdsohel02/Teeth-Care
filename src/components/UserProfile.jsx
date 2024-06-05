@@ -12,10 +12,6 @@ const UserProfile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [oldPassword, setOldPassword] = useState("");
 
-  console.log(oldPassword);
-  console.log(newPassword);
-  console.log(hidden);
-
   useEffect(() => {
     fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
@@ -26,13 +22,16 @@ const UserProfile = () => {
 
   const reauthenticate = async (email, password) => {
     const credential = EmailAuthProvider.credential(email, password);
+
     try {
       const authSuccess = await reauthenticateWithCredential(user, credential);
-      console.log("Reauthentication successful");
+
       return authSuccess;
     } catch (error) {
-      console.error("Reauthentication failed", error);
-      return "Reauthenticationfailed ";
+      console.log("Error:", error);
+      if (error.message.includes("invalid-credential")) {
+        toast.error("Maybe Your a Google User Or Your password is wrong");
+      }
     }
   };
 
@@ -42,15 +41,14 @@ const UserProfile = () => {
     if (user) {
       try {
         const authenticated = await reauthenticate(user.email, oldPassword);
-
+        console.log(authenticated);
         if (authenticated?.user?.emailVerified) {
           await updatePassword(user, newPassword);
           toast.success("Password Changed");
           setHidden(!hidden);
-        } else if (authenticated === "Reauthenticationfailed") {
-          toast.error("Plz!Provide correct old password");
         }
       } catch (error) {
+        console.log(error.message);
         if (error.message.includes("requires-recent-login")) {
           toast.error(
             "You Already changed your password, If you want to change it again? Please login again"
