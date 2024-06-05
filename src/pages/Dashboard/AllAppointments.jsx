@@ -3,7 +3,6 @@ import SingleAppointment from "../../components/SingleAppointment";
 
 const AllAppointments = () => {
   const appointments = useLoaderData();
-  console.log(appointments);
 
   return (
     <div>

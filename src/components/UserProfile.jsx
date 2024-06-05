@@ -14,6 +14,7 @@ const UserProfile = () => {
 
   console.log(oldPassword);
   console.log(newPassword);
+  console.log(hidden);
 
   useEffect(() => {
     fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
@@ -90,7 +91,7 @@ const UserProfile = () => {
         </div>
         {hidden ? (
           <button
-            onClick={() => setHidden(false)}
+            onClick={() => setHidden(!hidden)}
             className="text-slate-200 p-2 rounded-lg text-lg font-semibold hover:border-2 hover:text-slate-300  border border-blue-600"
           >
             Password Change

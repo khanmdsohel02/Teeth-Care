@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /* eslint-disable react/prop-types */
 const SingleAppointment = ({ appointment, index }) => {
   return (
@@ -11,7 +13,7 @@ const SingleAppointment = ({ appointment, index }) => {
         <td>{appointment?.phNum}</td>
         <td>{appointment?.appointDate}</td>
         <td>
-          <input type="checkbox" name="done" id="checkboxid" />
+          <input className="" type="checkbox" name="done" id="checkboxid" />
         </td>
       </tr>
     </>
