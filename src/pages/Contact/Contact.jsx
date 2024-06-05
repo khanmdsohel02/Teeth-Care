@@ -1,6 +1,7 @@
 import { useContext, useRef } from "react";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const { user } = useContext(AuthContext);
@@ -8,20 +9,24 @@ const Contact = () => {
 
   const handleContactData = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const userName = form.username.value;
-    const email = form.email.value;
-    const message = form.message.value;
+    const ContactForm = e.target;
+    const userName = ContactForm.username.value;
+    const email = ContactForm.email.value;
+    const message = ContactForm.message.value;
 
     const contactData = { userName, email, message };
     console.log(contactData);
 
     emailjs
-      .sendForm("service_mpojwit", "template_zdzyqdk", form.current, {
-        publicKey: "iW2TU-bHiNGdI8TAJ",
-      })
+      .sendForm(
+        "service_mpojwit",
+        "template_hm4e26v",
+        form.current,
+        "iW2TU-bHiNGdI8TAJ"
+      )
       .then(
         () => {
+          toast.success("Message Send");
           console.log("SUCCESS!");
         },
         (error) => {
@@ -59,16 +64,15 @@ const Contact = () => {
               <textarea
                 name="message"
                 type="text"
-                className="h-40 w-full pt-2 input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
+                className="lg:min-h-40 min-h-20 w-full pt-2 input input-bordered text-xl bg-blue-100 text-blue-900 font-medium "
                 placeholder="Describe your problem ..."
               />
 
-              <button
-                type="submit"
+              <input
                 className="btn text-slate-200 pb-2 pt-1 text-2xl bg-transparent border-slate-200 hover:border-none hover:bg-blue-600"
-              >
-                Send Message
-              </button>
+                type="submit"
+                value="Send"
+              />
             </form>
           </div>
           <div>
