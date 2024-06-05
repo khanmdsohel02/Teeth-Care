@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { sendPasswordResetEmail } from "firebase/auth";
+import auth from "../../firebase/firebaseConfig";
 
 const Login = () => {
   const navigate = useNavigate();
   const { userLogin, googleLogin } = useContext(AuthContext);
   const location = useLocation();
+  const [email, setEmail] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -92,6 +95,21 @@ const Login = () => {
       });
   };
 
+  const handleResetPassword = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.warning("Plz! Check Your Email");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        if (errorMessage.includes("missing-email")) {
+          toast.error("Plz! Fill Email Field");
+        }
+
+        // ..
+      });
+  };
+
   return (
     <div className="hero min-h-screen ">
       <div className="card shrink-0 w-full max-w-lg shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
@@ -106,6 +124,7 @@ const Login = () => {
               </span>
             </label>
             <input
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Your E-mail"
               className="input input-bordered text-xl bg-blue-100 text-blue-900"
@@ -127,14 +146,14 @@ const Login = () => {
               required
             />
             <label className="label mt-3">
-              <a
-                href="#"
-                className="label-text-alt link link-hover text-slate-100  hover:font-bold text-lg"
+              <button
+                onClick={handleResetPassword}
+                className="label-text-alt link link-hover text-slate-100  hover:font-semibold text-lg"
               >
                 Forgot password?
-              </a>
+              </button>
             </label>
-            <label className="label mt-3 lg:w-[65%] w-[85%] text-slate-100">
+            <label className="label mt-3 lg:w-[65%] w-full text-slate-100">
               <span className="text-lg"> Don&apos;t Have An Account?</span>
               <Link
                 className=" font-semibold  text-xl underline"

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -53,6 +53,10 @@ const Register = () => {
                 navigate(location?.state ? location.state : "/");
               }
             });
+          sendEmailVerification(user).then(() => {
+            toast.warning(`${fName} First verify Your Email`);
+            console.log("verify your email");
+          });
         });
       })
       .catch((error) => {
@@ -167,7 +171,7 @@ const Register = () => {
               required
             />
           </div>
-          <label className="label mt-3 lg:w-[62%] w-[85%] text-blue-400">
+          <label className="label mt-3 lg:w-[62%] w-full text-blue-400">
             <span className="text-lg text-slate-100">
               {" "}
               Already Have An Account?
