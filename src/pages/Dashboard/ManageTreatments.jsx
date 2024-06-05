@@ -7,14 +7,14 @@ const ManageTreatments = () => {
 
   return (
     <div className="text-3xl">
-      <div className="lg:w-full">
-        <h1 className="text-5xl font-bold text-center mb-10 text-slate-200">
+      <div>
+        <h1 className="lg:text-5xl font-bold text-center mb-10 text-slate-200">
           Manage Treatment
         </h1>
-        <div className="overflow-x-auto">
+        <div>
           <table className="table text-slate-200 bg-blue-600 rounded-none">
             {/* head */}
-            <thead className="text-center text-xl text-slate-200">
+            <thead className="text-center lg:text-xl text-slate-200">
               <tr className="bg-blue-700">
                 <th>S.No</th>
                 <th>Treatment Name</th>

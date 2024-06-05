@@ -146,7 +146,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="bg-blue-500 mt-20">
-        <div className=" hidden h-16 lg:flex justify-between content-center w-[80%] mx-auto">
+        <div className="lg:min-h-16">
           <ContactNav />
         </div>
       </div>

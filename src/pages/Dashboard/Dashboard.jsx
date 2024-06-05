@@ -51,9 +51,9 @@ const Dashboard = () => {
     </>
   );
   return (
-    <div className="drawer lg:drawer-open bg-gradient-to-b from-blue-400 to-blue-300">
+    <div className="drawer lg:drawer-open ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content min-h-screen flex flex-col items-center justify-center w-[90%] mx-auto">
+      <div className="drawer-content min-h-screen flex flex-col items-center justify-center min-w-[100%] mx-auto bg-gradient-to-b from-blue-400 to-blue-300 overflow-auto">
         {/* Page content here */}
         <Outlet />
         <label
