@@ -1,13 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Appointment = () => {
   const [treatment, setTreatment] = useState({});
   const [selectedDate, setSelectedDate] = useState("");
   const [phNum, setPhNum] = useState("");
-
-  console.log(selectedDate);
+  const whenAppoint = new Date().toDateString();
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -17,39 +17,40 @@ const Appointment = () => {
       .then((res) => res.json())
       .then((data) => {
         setTreatment(data);
-        console.log(data);
       });
   }, [id]);
-
-  const whenAppoint = new Date().toDateString();
 
   const appointdata = {
     patientName: user?.displayName,
     patientEmail: user?.email,
-    treatment: treatment.name,
-    treatmentCost: treatment.cost,
+    treatment: treatment?.name,
+    treatmentCost: treatment?.cost,
     appointDate: selectedDate,
     phNum,
     whenAppoint,
   };
-  console.log(appointdata);
 
   const handleAppointment = (e) => {
     const token = localStorage.getItem("token");
     e.preventDefault();
 
-    fetch(`https://teeth-care-backend.vercel.app/appointment`, {
+    fetch(`http://localhost:3000/appointment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        // authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(appointdata),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.result);
-        navigate(`/`);
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success(`We Get Your ${treatment?.name} Appointment`);
+        } else if (data.message) {
+          toast.success(data.message);
+        }
+        navigate(-1);
       });
   };
 
