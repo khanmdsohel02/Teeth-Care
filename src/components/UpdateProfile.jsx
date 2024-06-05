@@ -10,7 +10,7 @@ const UpdateProfile = () => {
   const [userAllInfo, setUserAllInfo] = useState({});
 
   useEffect(() => {
-    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
+    fetch(`https://teeth-care-backend.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAllInfo(data);
@@ -41,7 +41,7 @@ const UpdateProfile = () => {
         });
 
       fetch(
-        `https://teeth-care-backend.vercel.app/update-user/${user?.email}`,
+        `https://teeth-care-backend.onrender.com/update-user/${user?.email}`,
         {
           method: "PUT",
           headers: {

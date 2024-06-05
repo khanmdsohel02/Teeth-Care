@@ -16,7 +16,7 @@ const UserProfile = () => {
   console.log(newPassword);
 
   useEffect(() => {
-    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
+    fetch(`https://teeth-care-backend.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAllInfo(data);
