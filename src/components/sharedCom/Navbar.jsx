@@ -91,15 +91,6 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow rounded-b-md w-52  bg-gradient-to-b from-blue-400 to-blue-700"
               >
                 {links}
-                <li>
-                  {" "}
-                  <Link
-                    to="/appointment"
-                    className=" md:hidden pt-2 btn bg-blue-700 hover:bg-blue-900 text-white text-lg font-semibold border-none"
-                  >
-                    Booked
-                  </Link>
-                </li>
               </ul>
             </div>
             <Link to="/" className="text-2xl h-20 w-24">
@@ -114,12 +105,6 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 ">{links}</ul>
           </div>
           <div className="navbar-end space-x-3">
-            <Link
-              to="/appointment"
-              className="hidden md:block pt-2 btn bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold border-none"
-            >
-              Booked
-            </Link>
             {user ? (
               <>
                 <button
