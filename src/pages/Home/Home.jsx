@@ -183,6 +183,7 @@ const Home = () => {
         </Swiper>
       </div>
       {/* Contact */}
+
       <Contact />
     </>
   );

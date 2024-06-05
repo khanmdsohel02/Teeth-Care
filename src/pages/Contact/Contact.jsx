@@ -9,13 +9,6 @@ const Contact = () => {
 
   const handleContactData = (e) => {
     e.preventDefault();
-    const ContactForm = e.target;
-    const userName = ContactForm.username.value;
-    const email = ContactForm.email.value;
-    const message = ContactForm.message.value;
-
-    const contactData = { userName, email, message };
-    console.log(contactData);
 
     emailjs
       .sendForm(
@@ -38,9 +31,13 @@ const Contact = () => {
 
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="lg:w-[70%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
+      <h1 className="lg:mb-10 lg:pt-10 text-5xl font-semibold text-center text-blue-600">
+        Contact Us
+      </h1>
+      <div className="hero mb-14  lg:w-[80%] mx-auto">
+        <div className="hero-content w-full flex-col lg:flex-row lg:gap-16">
+          {/* contact Form */}
+          <div className="flex-1 mt-16 card p-4 lg:p-10  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
             <form
               ref={form}
               onSubmit={handleContactData}
@@ -75,14 +72,14 @@ const Contact = () => {
               />
             </form>
           </div>
-          <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
+          {/* map */}
+          <div className="flex-1 lg:h-[440px] lg:mt-16 mt-5">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29210.145499516093!2d90.33740087798185!3d23.77346243386871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1717572710969!5m2!1sen!2sbd"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>
