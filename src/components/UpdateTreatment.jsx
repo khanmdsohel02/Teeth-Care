@@ -54,7 +54,7 @@ const UpdateTreatment = () => {
   return (
     <>
       {" "}
-      <div className="lg:w-[60%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
+      <div className="lg:w-[60%] w-[95%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
         <form onSubmit={handleUpdateTreatment} className="grid gap-5">
           <input
             name="name"

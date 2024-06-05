@@ -16,7 +16,7 @@ const UserProfile = () => {
   }, [user?.email]);
 
   return (
-    <div className="card w-96 bg-blue-400 shadow-lg shadow-blue-600">
+    <div className="card lg:w-96 bg-blue-400 shadow-lg shadow-blue-600">
       <small className="p-5 text-slate-100">
         <b>ID: </b>
         {user?.uid || userAllInfo?._id}

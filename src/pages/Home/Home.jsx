@@ -139,17 +139,16 @@ const Home = () => {
       </div>
       {/* testimonial */}
       <div className="mb-20 mt-28 lg:w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
-        <h1 className="mb-14 text-5xl text-center font-semibold text-blue-500">
-          What Our Patients says!
+        <h1 className="mb-14 lg:text-5xl text-3xl  text-center font-semibold text-blue-500">
+          Happy Patients!
         </h1>
 
         <Swiper
-          // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
-          navigation
-          // pagination={{ clickable: true }}
+          // navigation
+          pagination={{ clickable: true }}
           // scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}

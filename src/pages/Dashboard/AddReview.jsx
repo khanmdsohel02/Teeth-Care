@@ -40,7 +40,7 @@ const AddReview = () => {
     }
   };
   return (
-    <div className="lg:w-[70%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
+    <div className="lg:w-[70%] w-[95%] mx-auto mt-16 card p-4 lg:p-20  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
       <form onSubmit={handleAddReview} className="grid gap-5">
         <input
           name="reviewername"
