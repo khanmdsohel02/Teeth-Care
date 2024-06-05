@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 /* eslint-disable react/prop-types */
 const SingleAppointment = ({ appointment, index }) => {
   return (
