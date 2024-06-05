@@ -37,7 +37,7 @@ const Register = () => {
 
           navigate(location?.state ? location.state : "/");
 
-          fetch(`https://teeth-care-backend.onrender.com/users/`, {
+          fetch(`https://teeth-care-backend.vercel.app/users/`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -80,7 +80,7 @@ const Register = () => {
 
         const googleUserInfo = { fName, photo, email };
 
-        fetch(`https://teeth-care-backend.onrender.com/users/`, {
+        fetch(`https://teeth-care-backend.vercel.app/users/`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

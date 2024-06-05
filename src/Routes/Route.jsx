@@ -28,8 +28,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () =>
-          fetch("https://teeth-care-backend.onrender.com/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "about",
@@ -38,13 +37,12 @@ const router = createBrowserRouter([
       {
         path: "treatments",
         element: <Treatments />,
-        loader: () =>
-          fetch("https://teeth-care-backend.onrender.com/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "blogs",
         element: <Blogs />,
-        loader: () => fetch("https://teeth-care-backend.onrender.com/blogs"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/blogs"),
       },
       {
         path: "contact",
@@ -59,17 +57,13 @@ const router = createBrowserRouter([
         path: "treatments/appointment/:id",
         element: <Appointment />,
         loader: ({ params }) =>
-          fetch(
-            `https://teeth-care-backend.onrender.com/treatment/${params.id}`
-          ),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
       {
         path: "appointment/:id",
         element: <Appointment />,
         loader: ({ params }) =>
-          fetch(
-            `https://teeth-care-backend.onrender.com/treatment/${params.id}`
-          ),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
 
       {
@@ -89,29 +83,25 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <ManageTreatments />,
-        loader: () =>
-          fetch("https://teeth-care-backend.onrender.com/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "/dashboard/update-treatment/:id",
         element: <UpdateTreatment />,
         loader: ({ params }) =>
-          fetch(
-            `https://teeth-care-backend.onrender.com/treatment/${params.id}`
-          ),
+          fetch(`https://teeth-care-backend.vercel.app/treatment/${params.id}`),
       },
       {
         path: "manage-treatments",
         element: <ManageTreatments />,
-        loader: () =>
-          fetch("https://teeth-care-backend.onrender.com/treatments"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/treatments"),
       },
       {
         path: "manage-treatments/update-treatment/:id",
         element: <UpdateTreatment />,
         loader: async ({ params }) =>
           await fetch(
-            `https://teeth-care-backend.onrender.com/treatment/${params.id}`
+            `https://teeth-care-backend.vercel.app/treatment/${params.id}`
           ),
       },
 
@@ -138,13 +128,13 @@ const router = createBrowserRouter([
       {
         path: "all-user",
         element: <AllUser />,
-        loader: () => fetch("https://teeth-care-backend.onrender.com/users"),
+        loader: () => fetch("https://teeth-care-backend.vercel.app/users"),
       },
       {
         path: "all-appointments",
         element: <AllAppointments />,
         loader: () =>
-          fetch("https://teeth-care-backend.onrender.com/appointments"),
+          fetch("https://teeth-care-backend.vercel.app/appointments"),
       },
     ],
   },

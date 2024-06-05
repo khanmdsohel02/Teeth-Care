@@ -13,7 +13,7 @@ const Appointment = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`https://teeth-care-backend.onrender.com/treatment/${id}`)
+    fetch(`https://teeth-care-backend.vercel.app/treatment/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTreatment(data);
@@ -34,7 +34,7 @@ const Appointment = () => {
     const token = localStorage.getItem("token");
     e.preventDefault();
 
-    fetch(`https://teeth-care-backend.onrender.com/appointment`, {
+    fetch(`https://teeth-care-backend.vercel.app/appointment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

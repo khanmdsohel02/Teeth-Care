@@ -20,7 +20,7 @@ const AddReview = () => {
       `Are you sure? ${title} is a correct review?`
     );
     if (isConfirm) {
-      fetch("https://teeth-care-backend.onrender.com/review", {
+      fetch("https://teeth-care-backend.vercel.app/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",

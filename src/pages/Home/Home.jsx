@@ -15,13 +15,13 @@ const Home = () => {
   const [reviews, setReviews] = useState();
 
   useEffect(() => {
-    fetch("https://teeth-care-backend.onrender.com/blogs")
+    fetch("https://teeth-care-backend.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
       });
 
-    fetch("https://teeth-care-backend.onrender.com/reviews")
+    fetch("https://teeth-care-backend.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
