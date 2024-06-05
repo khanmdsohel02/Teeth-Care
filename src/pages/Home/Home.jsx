@@ -34,12 +34,12 @@ const Home = () => {
     <>
       {/* Hero */}
       <div className="hero min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
-        <div className="hero-content w-full flex-col lg:flex-row-reverse gap-x-[10%]">
+        <div className="hero-content w-full  lg:flex-row-reverse gap-x-[10%]">
           <img
             src="https://i.ibb.co/zFgmsc2/header.jpg"
-            className="lg:max-w-xl rounded-lg shadow-lg"
+            className="lg:max-w-xl rounded-lg shadow-lg hidden lg:block"
           />
-          <div>
+          <div className="-mt-28">
             <h1 className="lg:text-5xl text-2xl text-slate-100 font-bold capitalize">
               complete dental solution for everyone!
             </h1>
@@ -54,7 +54,7 @@ const Home = () => {
             </p>
             <Link
               to={"treatments"}
-              className="btn btn-primary text-slate-100 text-lg"
+              className="btn bg-blue-600 hover:border-none border border-slate-200 hover:bg-blue-700  text-slate-100 text-lg"
             >
               See All Treatments
             </Link>

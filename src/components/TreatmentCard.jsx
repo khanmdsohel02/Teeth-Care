@@ -19,7 +19,7 @@ const TreatmentCard = ({ treatment }) => {
         <div className="card-actions mt-4">
           <Link
             to={`appointment/${id}`}
-            className="btn bg-blue-600 text-white text-lg hover:bg-blue-700 border-none"
+            className="btn bg-blue-600 text-white text-lg hover:bg-blue-800 border-none"
           >
             Appointment
           </Link>

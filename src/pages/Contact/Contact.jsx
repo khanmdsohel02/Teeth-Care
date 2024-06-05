@@ -2,6 +2,9 @@ import { useContext, useRef } from "react";
 import { AuthContext } from "../../ContextProvider/AuthProvider";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaClock, FaPhoneVolume } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const Contact = () => {
   const { user } = useContext(AuthContext);
@@ -73,14 +76,32 @@ const Contact = () => {
             </form>
           </div>
           {/* map */}
-          <div className="flex-1 lg:h-[440px] lg:mt-16 mt-5">
+          <address className="flex-1 lg:mt-16 space-y-2 mt-7">
+            <div className=" flex items-center gap-2  text-white text-lg">
+              <FaLocationDot className="text-2xl" />
+              <span>Road# 2, House# 2, Baitul Aman Housing, Mohammadpur</span>
+            </div>
+            <div className="flex  items-center gap-2 text-white text-lg">
+              <FaPhoneVolume className="text-2xl" />
+              <a href="tel:+1234567890">1234567890</a>
+            </div>
+            <div className="flex items-center gap-2 text-white text-lg">
+              <MdOutlineEmail className="text-2xl" />
+              <a href="mailto:teeth@care.com" target="_blank">
+                teeth@care.com
+              </a>
+            </div>
+            <div className="flex  items-center gap-2 text-white text-lg">
+              <FaClock className="text-2xl" />
+              <span>Mon - Sat: 8.00 AM - 6.00 PM BD</span>
+            </div>
             <iframe
-              className="w-full h-full rounded-lg"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29210.145499516093!2d90.33740087798185!3d23.77346243386871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1717572710969!5m2!1sen!2sbd"
+              className="w-full lg:h-[300px] rounded-lg border-2 border-blue-600"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7299.366559583074!2d90.363497!3d23.829859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c12555555555%3A0xae6d8391967a1b11!2sSporsho%20Dental%20Care!5e0!3m2!1sen!2sbd!4v1717579969715!5m2!1sen!2sbd"
               allowfullscreen=""
               loading="lazy"
             ></iframe>
-          </div>
+          </address>
         </div>
       </div>
     </>

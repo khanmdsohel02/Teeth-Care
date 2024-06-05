@@ -4,20 +4,22 @@ import { MdOutlineEmail } from "react-icons/md";
 
 const ContactNav = () => {
   return (
-    <div className="lg:flex lg:justify-between lg:pt-5 lg:w-[90%] py-5 px-2  mx-auto">
-      <div className=" flex justify-center items-center gap-2 text-white text-lg">
+    <div className="lg:flex lg:justify-between lg:pt-5 lg:w-[90%] py-5 pl-5  mx-auto">
+      <div className=" flex items-center gap-2 text-white text-lg">
         <FaLocationDot className="text-2xl" />
         <span>Road# 2, House# 2, Baitul Aman Housing, Mohammadpur</span>
       </div>
-      <div className="flex justify-center items-center gap-2 text-white text-lg">
+      <div className="flex  items-center gap-2 text-white text-lg">
         <FaPhoneVolume className="text-2xl" />
-        <span>+880 123 456 789</span>
+        <a href="tel:+1234567890">1234567890</a>
       </div>
-      <div className="flex justify-center items-center gap-2 text-white text-lg">
+      <div className="flex  items-center gap-2 text-white text-lg">
         <MdOutlineEmail className="text-2xl" />
-        <span>Hellow@example.com</span>
+        <a href="mailto:teeth@care.com" target="_blank">
+          teeth@care.com
+        </a>
       </div>
-      <div className="flex justify-center items-center gap-2 text-white text-lg">
+      <div className="flex  items-center gap-2 text-white text-lg">
         <FaClock className="text-2xl" />
         <span>Mon - Sat: 8.00 AM - 6.00 PM BD</span>
       </div>
