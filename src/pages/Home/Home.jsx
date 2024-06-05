@@ -1,11 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 import BlogCard from "../../components/BlogCard";
-import { Swiper } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Contact from "../Contact/Contact";
 import TreatmentCard from "../../components/TreatmentCard";
 import { useEffect, useState } from "react";
-import ReviewCard from "../../components/ReviewCard";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Home = () => {
   const [blogs, setBlogs] = useState();
@@ -15,22 +18,17 @@ const Home = () => {
     fetch("https://teeth-care-backend.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setBlogs(data);
       });
 
     fetch("https://teeth-care-backend.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       });
   }, []);
 
-  console.log(blogs);
-
   const treatments = useLoaderData();
-  console.log(treatments);
 
   return (
     <>
@@ -137,22 +135,48 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mb-20 mt-28 w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
+      <div className="mb-20 mt-28 lg:w-[80%] mx-auto bg-bg-img p-14 rounded-lg shadow-lg bg-cover bg-center">
         <h1 className="mb-14 text-5xl text-center font-semibold text-blue-500">
-          What is Patients says!
+          What Our Patients says!
         </h1>
 
         <Swiper
-          modules={[Pagination]}
-          spaceBetween={40}
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
           slidesPerView={1}
+          navigation
           pagination={{ clickable: true }}
-          className=" flex justify-center items-center p-4"
+          // scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
         >
-          {" "}
           {reviews?.map((review) => (
-            <ReviewCard key={review._id} review={review} />
+            <SwiperSlide key={review?._id}>
+              <div className="w-24 mx-auto h-24">
+                <img
+                  className="w-[100%] h-[100%] rounded-full"
+                  src={review?.photo}
+                  alt="client"
+                />
+              </div>
+              <div className="mt-16 text-center text-slate-800 space-y-4">
+                <h1 className="text-2xl uppercase font-semibold">
+                  {review?.title}
+                </h1>
+                <p className="text-2xl first-letter:uppercase">
+                  {review?.review}
+                </p>
+                <p className="uppercase text-xl font-semibold">
+                  {review?.reviewername}
+                </p>
+                <small className="text-sm font-medium">
+                  {review?.reviewDate}
+                </small>
+              </div>
+            </SwiperSlide>
           ))}
+          ;
         </Swiper>
       </div>
 
@@ -162,7 +186,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /*  */
-}
