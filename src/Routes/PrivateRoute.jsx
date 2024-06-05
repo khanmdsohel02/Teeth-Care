@@ -6,7 +6,7 @@ import { Navigate, useLocation } from "react-router-dom";
 const PrivateRoute = ({ Children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
-  console.log(user);
+  
 
   if (loading)
     return (
@@ -15,7 +15,7 @@ const PrivateRoute = ({ Children }) => {
       </div>
     );
 
-  if (user) return Children;
+  if (user?.email) return Children;
 
   return <Navigate state={location.pathname} to="/login" />;
 };
