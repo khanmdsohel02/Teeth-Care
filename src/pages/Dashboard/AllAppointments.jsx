@@ -24,6 +24,7 @@ const AllAppointments = () => {
                   <th>Phone Number</th>
                   <th>Meet Day</th>
                   <th>Done</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody className="text-center">
