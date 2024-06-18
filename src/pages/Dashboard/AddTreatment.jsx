@@ -16,7 +16,7 @@ const AddTreatment = () => {
 
     console.log(isConfirm);
 
-    const treatment = { name, cost, about, photo };
+    const treatment = { name: name.toLowerCase(), cost, about, photo };
     console.log(treatment);
 
     if (isConfirm) {

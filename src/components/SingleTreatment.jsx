@@ -33,7 +33,7 @@ const SingleTreatment = ({ treatment, index }) => {
   return (
     <tr className="text-center lg:text-xl text-slate-200 border-slate-200  border-b">
       <th>{index + 1}</th>
-      <td>{name}</td>
+      <td className="capitalize">{name}</td>
       <td>{cost} TK</td>
       <td>{about.slice(0, 30)}...</td>
       {/* <td className="border-red-500 border-r">{img.slice(0, 20)}...</td> */}

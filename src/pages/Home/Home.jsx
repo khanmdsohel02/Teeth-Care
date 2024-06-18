@@ -11,8 +11,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState();
-  const [reviews, setReviews] = useState();
+  const [blogs, setBlogs] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/blogs")

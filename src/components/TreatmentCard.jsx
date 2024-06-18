@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const TreatmentCard = ({ treatment }) => {
   const { _id: id, name, cost, about, photo } = treatment;
-  console.log(name, cost, about, photo);
+  // console.log(name, cost, about, photo);
 
   return (
     <div className="card w-96 bg-blue-400 shadow-2xl hover:shadow-blue-600">
@@ -14,7 +14,7 @@ const TreatmentCard = ({ treatment }) => {
         <h4 className=" font-semibold text-blue-900 text-center">
           Taka:{cost}
         </h4>
-        <h2 className="card-title text-4xl text-center">{name}</h2>
+        <h2 className="card-title text-4xl text-center capitalize">{name}</h2>
         <p className="text-xl text-wrap">{about}</p>
         <div className="card-actions mt-4">
           <Link

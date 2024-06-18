@@ -5,9 +5,7 @@ import { toast } from "react-toastify";
 const UpdateTreatment = () => {
   const [treatment, setTreatment] = useState({});
   const navigate = useNavigate();
-  console.log(treatment);
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:3000/treatment/${id}`)
@@ -25,7 +23,7 @@ const UpdateTreatment = () => {
     const cost = form.cost.value;
     const about = form.about.value;
     const photo = form.photo.value;
-    const updateInfo = { name, cost, about, photo };
+    const updateInfo = { name: name.toLowerCase(), cost, about, photo };
 
     const isConfirm = window.confirm(
       `Are you sure? You want to update ${name} treatment?`
