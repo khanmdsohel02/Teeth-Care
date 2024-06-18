@@ -13,7 +13,7 @@ const SingleTreatment = ({ treatment, index }) => {
     );
 
     if (isConfirm) {
-      await fetch(`https://teeth-care-backend.vercel.app/treatment/${id}`, {
+      await fetch(`http://localhost:3000/treatment/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${token}`,

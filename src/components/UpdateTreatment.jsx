@@ -10,7 +10,7 @@ const UpdateTreatment = () => {
   console.log(id);
 
   useEffect(() => {
-    fetch(`https://teeth-care-backend.vercel.app/treatment/${id}`)
+    fetch(`http://localhost:3000/treatment/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTreatment(data);
@@ -32,7 +32,7 @@ const UpdateTreatment = () => {
     );
 
     if (isConfirm) {
-      fetch(`https://teeth-care-backend.vercel.app/treatment/${id}`, {
+      fetch(`http://localhost:3000/treatment/${id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

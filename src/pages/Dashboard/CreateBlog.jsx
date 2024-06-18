@@ -20,7 +20,7 @@ const CreateBlog = () => {
     );
 
     if (isConfirm) {
-      fetch("https://teeth-care-backend.vercel.app/blog", {
+      fetch("http://localhost:3000/blog", {
         method: "POST",
         headers: {
           "content-type": "application/json",

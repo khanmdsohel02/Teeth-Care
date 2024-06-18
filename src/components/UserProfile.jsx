@@ -13,7 +13,7 @@ const UserProfile = () => {
   const [oldPassword, setOldPassword] = useState("");
 
   useEffect(() => {
-    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
+    fetch(`http://localhost:3000/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAllInfo(data);

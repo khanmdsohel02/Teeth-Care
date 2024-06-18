@@ -8,7 +8,7 @@ const Treatments = () => {
   // const [treatments, setTreatments] = useState();
 
   // useEffect(() => {
-  //   fetch("https://teeth-care-backend.vercel.app/treatments")
+  //   fetch("http://localhost:3000/treatments")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       console.log(data);
