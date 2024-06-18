@@ -3,7 +3,6 @@ import SingleTreatment from "../../components/SingleTreatment";
 
 const ManageTreatments = () => {
   const treatments = useLoaderData();
-  console.log(treatments);
 
   return (
     <div className="text-3xl">

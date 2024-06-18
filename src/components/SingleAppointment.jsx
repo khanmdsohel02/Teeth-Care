@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 const SingleAppointment = ({ appointment, index }) => {
   const [done, setDone] = useState(appointment?.status || false);
   const navigate = useNavigate();
+  console.log(done);
 
   const handleDeleteAppointment = async (id) => {
     const token = localStorage.getItem("token");
