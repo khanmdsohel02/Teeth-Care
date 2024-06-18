@@ -54,13 +54,21 @@ const router = createBrowserRouter([
 
       {
         path: "treatments/appointment/:id",
-        element: <Appointment />,
+        element: (
+          <PrivateRoute>
+            <Appointment />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/treatment/${params.id}`),
       },
       {
         path: "appointment/:id",
-        element: <Appointment />,
+        element: (
+          <PrivateRoute>
+            <Appointment />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/treatment/${params.id}`),
       },
@@ -78,9 +86,9 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      // <PrivateRoute>
-      <Dashboard />
-      // </PrivateRoute>
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
     ),
     children: [
       {

@@ -28,6 +28,7 @@ const Appointment = () => {
     appointDate: selectedDate,
     phNum,
     whenAppoint,
+    stutes: false,
   };
 
   const handleAppointment = (e) => {
@@ -44,13 +45,14 @@ const Appointment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           toast.success(`We Get Your ${treatment?.name} Appointment`);
+          navigate(-1);
         } else if (data.message) {
-          toast.success(data.message);
+          toast.warning(data.message);
+          navigate(-1);
         }
-        navigate(-1);
+        navigate("/treatments");
       });
   };
 
@@ -60,7 +62,7 @@ const Appointment = () => {
         <input
           name="name"
           type="text"
-          className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium"
+          className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium capitalize"
           placeholder="Treatment Name"
           value={treatment?.name}
           readOnly={true}
@@ -88,6 +90,7 @@ const Appointment = () => {
           className="w-full input input-bordered text-xl bg-blue-100 text-blue-900 font-medium "
           placeholder="Phone Number"
           onChange={(e) => setPhNum(e.target.value)}
+          required
         />
         <input
           name="appointdate"
@@ -96,6 +99,7 @@ const Appointment = () => {
           placeholder="Date"
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
+          required
         />
 
         <button
