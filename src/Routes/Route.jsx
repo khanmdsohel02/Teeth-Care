@@ -19,6 +19,7 @@ import ManageTreatments from "../pages/Dashboard/ManageTreatments";
 import UpdateTreatment from "../components/UpdateTreatment";
 import PrivateRoute from "./PrivateRoute";
 import AllAppointments from "../pages/Dashboard/AllAppointments";
+import NotFound from "../components/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -148,7 +149,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>Not Found</div>,
+    element: <NotFound />,
   },
 ]);
 export default router;
