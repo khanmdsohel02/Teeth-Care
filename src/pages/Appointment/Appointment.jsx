@@ -28,7 +28,7 @@ const Appointment = () => {
     appointDate: selectedDate,
     phNum,
     whenAppoint,
-    stutes: false,
+    status: false,
   };
 
   const handleAppointment = (e) => {

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 /* eslint-disable react/prop-types */
 const SingleAppointment = ({ appointment, index }) => {
-  const [done, setDone] = useState(appointment?.stutes || false);
+  const [done, setDone] = useState(appointment?.status || false);
   const navigate = useNavigate();
 
   const handleDeleteAppointment = async (id) => {
@@ -42,12 +42,12 @@ const SingleAppointment = ({ appointment, index }) => {
           "content-type": "application/json",
           authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ stutes: status }),
+        body: JSON.stringify({ status: status }),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.modifiedCount > 0) {
-            toast.success("Appointment updated successfully");
+            toast.success("Appointment status updated successfully");
             navigate("/dashboard/all-appointments");
           }
         });
@@ -55,7 +55,7 @@ const SingleAppointment = ({ appointment, index }) => {
   };
 
   useEffect(() => {
-    if (done !== appointment?.stutes) {
+    if (done !== appointment?.status) {
       handleUpdateAppointment(appointment._id, done);
     }
   }, [done]);

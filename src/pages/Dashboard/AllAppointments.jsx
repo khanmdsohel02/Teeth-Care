@@ -23,7 +23,7 @@ const AllAppointments = () => {
                   <th>Patient Email</th>
                   <th>Phone Number</th>
                   <th>Meet Day</th>
-                  <th>Done</th>
+                  <th>Status</th>
                   <th>Delete</th>
                 </tr>
               </thead>
