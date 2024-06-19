@@ -64,7 +64,7 @@ const SingleAppointment = ({ appointment, index }) => {
   return (
     <>
       <tr className="text-center text-xl text-slate-200 border-b-slate-200">
-        <td>{index + 1}</td>
+        <td className="hidden lg:block">{index + 1}</td>
         <td>{appointment?.treatment}</td>
         <td>{appointment?.treatmentCost}</td>
         <td>{appointment?.patientName}</td>

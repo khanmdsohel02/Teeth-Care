@@ -5,12 +5,12 @@ const AllUser = () => {
   const users = useLoaderData();
   console.log(users);
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-auto">
       <table className="table text-slate-200 bg-blue-600 rounded-none">
         {/* head */}
         <thead>
-          <tr className="bg-blue-700">
-            <th className=" bg-blue-700 text-slate-200 text-xl font-semibold">
+          <tr className="bg-blue-700 text-center">
+            <th className=" bg-blue-700 text-slate-200 text-xl font-semibold hidden lg:block">
               S.No
             </th>
             <th className=" bg-blue-700 text-slate-200 text-xl font-semibold">

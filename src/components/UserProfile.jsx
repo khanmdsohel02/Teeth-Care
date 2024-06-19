@@ -111,7 +111,8 @@ const UserProfile = () => {
         {hidden ? (
           <button
             onClick={() => setHidden(!hidden)}
-            className="text-slate-200 p-2 rounded-lg text-lg font-semibold hover:border-2 hover:text-slate-300  border border-blue-600"
+            className="text-slate-100 p-2 rounded-lg text-lg font-semibold hover:border-2 hover:text-slate-200  border border-blue-600 hover:border-none hover:bg-red-600"
+            title="Are you sure?"
           >
             Password Change
           </button>

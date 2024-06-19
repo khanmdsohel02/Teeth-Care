@@ -16,7 +16,7 @@ const AllAppointments = () => {
               {/* head */}
               <thead className="text-center text-xl text-slate-200">
                 <tr className="bg-blue-700">
-                  <th>S.No</th>
+                  <th className="hidden lg:block">S.No</th>
                   <th>Treatment Name</th>
                   <th>Treatment Cost</th>
                   <th>Patient Name </th>

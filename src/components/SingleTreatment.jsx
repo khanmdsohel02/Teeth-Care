@@ -32,7 +32,7 @@ const SingleTreatment = ({ treatment, index }) => {
 
   return (
     <tr className="text-center lg:text-xl text-slate-200 border-slate-200  border-b">
-      <th>{index + 1}</th>
+      <th className="hidden lg:block">{index + 1}</th>
       <td className="capitalize">{name}</td>
       <td>{cost} TK</td>
       <td className="hidden lg:block">{about.slice(0, 30)}...</td>

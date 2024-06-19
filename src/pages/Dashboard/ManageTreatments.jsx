@@ -15,7 +15,7 @@ const ManageTreatments = () => {
             {/* head */}
             <thead className="text-center lg:text-xl text-slate-200">
               <tr className="bg-blue-700">
-                <th>S.No</th>
+                <th className="hidden lg:block">S.No</th>
                 <th>Treatment Name</th>
                 <th>Treatment Cost</th>
                 <th className="hidden lg:block">About Treatment</th>
