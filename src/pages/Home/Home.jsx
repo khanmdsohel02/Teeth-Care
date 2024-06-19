@@ -37,7 +37,7 @@ const Home = () => {
         <div className="hero-content w-full  lg:flex-row-reverse gap-x-[10%]">
           <img
             src="https://i.ibb.co/zFgmsc2/header.jpg"
-            className="lg:max-w-xl rounded-lg shadow-lg hidden lg:block lg:hover:-rotate-12"
+            className="lg:max-w-xl rounded-lg shadow-lg hidden lg:block lg:hover:rotate-6 duration-200"
           />
           <div>
             <h1 className="lg:text-5xl text-2xl text-slate-100 font-bold capitalize">
@@ -66,7 +66,7 @@ const Home = () => {
         <div className="hero-content flex-col-reverse lg:flex-row gap-x-[10%]">
           <img
             src="https://i.ibb.co/YW6FqHh/WPic.png"
-            className="lg:max-w-2xl rounded-lg shadow-2xl shadow-blue-800 bg-blue-400 lg:hover:rotate-6"
+            className="lg:max-w-2xl rounded-lg shadow-2xl shadow-blue-800 bg-blue-400 lg:hover:-rotate-6 duration-200"
           />
           <div className="lg:space-y-3 space-y-2 text-blue-600">
             <h3 className="text-xl font-semibold uppercase">
