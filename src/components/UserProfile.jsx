@@ -12,6 +12,8 @@ const UserProfile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [oldPassword, setOldPassword] = useState("");
 
+  console.log(user?.emailVerified);
+
   useEffect(() => {
     fetch(`http://localhost:3000/users/${user?.email}`)
       .then((res) => res.json())
@@ -30,9 +32,27 @@ const UserProfile = () => {
     } catch (error) {
       console.log("Error:", error);
       if (error.message.includes("invalid-credential")) {
-        toast.error("Maybe Your a Google User Or Your password is wrong");
+        toast.error("Maybe Your a Google User Or Your Old password is wrong");
+        return;
       }
     }
+  };
+
+  const handlePasswordUpdate = async () => {
+    fetch(`http://localhost:3000/users/${user?.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ newPassword }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          setHidden(!hidden);
+          toast.success("Password Changed");
+        }
+      });
   };
 
   const handlePasswordChange = async (e) => {
@@ -42,16 +62,21 @@ const UserProfile = () => {
       try {
         const authenticated = await reauthenticate(user.email, oldPassword);
         console.log(authenticated);
-        if (authenticated?.user?.emailVerified) {
+        if (authenticated?.user?.emailVerified && user?.emailVerified) {
           await updatePassword(user, newPassword);
-          toast.success("Password Changed");
-          setHidden(!hidden);
+          handlePasswordUpdate();
+        } else if (
+          !authenticated?.user?.emailVerified &&
+          !user?.emailVerified
+        ) {
+          toast.warning("First Verify Your Email");
+          // setHidden(!hidden);
         }
       } catch (error) {
         console.log(error.message);
         if (error.message.includes("requires-recent-login")) {
           toast.error(
-            "You Already changed your password, If you want to change it again? Please login again"
+            "You Already changed your password, If you want to change? Please login again"
           );
         }
       }

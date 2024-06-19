@@ -62,13 +62,13 @@ const Home = () => {
         </div>
       </div>
       {/* Wellcome Message */}
-      <div className="hero lg:my-20 my-5">
+      <div className="hero lg:py-20 py-5 bg-bg-img bg-cover">
         <div className="hero-content flex-col-reverse lg:flex-row gap-x-[10%]">
           <img
             src="https://i.ibb.co/YW6FqHh/WPic.png"
-            className="lg:max-w-2xl rounded-lg shadow-2xl bg-blue-400 lg:hover:rotate-6"
+            className="lg:max-w-2xl rounded-lg shadow-2xl shadow-blue-800 bg-blue-400 lg:hover:rotate-6"
           />
-          <div className="lg:space-y-6 space-y-2 text-blue-500">
+          <div className="lg:space-y-3 space-y-2 text-blue-600">
             <h3 className="text-xl font-semibold uppercase">
               WELCOME TO Teeth DENTAL CARE!
             </h3>
@@ -93,11 +93,11 @@ const Home = () => {
       </div>
       {/* Our Treatments
        */}
-      <div className="lg:py-14 py-7 bg-gradient-to-br	from-blue-400 to-blue-700">
+      <div className="lg:py-14 py-7 w- bg-gradient-to-br	from-blue-400 to-blue-700">
         <h1 className="lg:mb-14 mb-7 lg:text-5xl text-4xl font-semibold text-center text-slate-200">
           Our Treatments
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10 lg:w-[80%] mx-auto">
           {treatments
             ?.toReversed()
             .slice(0, 3)
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
         <div className="flex justify-center mt-16">
           <Link
-            className="btn bg-blue-600 text-slate-100 text-xl hover:bg-blue-700"
+            className="btn px-12 bg-blue-600 text-slate-100 text-xl hover:bg-blue-700 border-slate-200 hover:border-none"
             to="/treatments"
           >
             See More
@@ -116,25 +116,27 @@ const Home = () => {
       </div>
       {/* Recent Blogs
        */}
-      <div className="lg:my-20 my-8 lg:w-[80%] mx-auto">
-        <h1 className="lg:mb-16 mb-9 text-5xl font-semibold text-center text-blue-600">
-          Recent Blogs
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
-          {blogs
-            ?.toReversed()
-            .slice(0, 2)
-            .map((blog) => (
-              <BlogCard key={blog._id} blog={blog} />
-            ))}
-        </div>
-        <div className="flex justify-center mt-16">
-          <Link
-            className="btn bg-blue-600 text-slate-100 text-xl hover:bg-blue-700"
-            to="/blogs"
-          >
-            See More
-          </Link>
+      <div className="bg-bg-img2 bg-cover">
+        <div className="lg:py-20 py-8 lg:w-[80%] mx-auto">
+          <h1 className="lg:mb-16 mb-9 text-5xl font-semibold text-center text-blue-600">
+            Recent Blogs
+          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center gap-20">
+            {blogs
+              ?.toReversed()
+              .slice(0, 2)
+              .map((blog) => (
+                <BlogCard key={blog._id} blog={blog} />
+              ))}
+          </div>
+          <div className="flex justify-center mt-16">
+            <Link
+              className="btn px-12 bg-blue-600 text-slate-100 text-xl hover:bg-blue-700 border-slate-200 hover:border-none"
+              to="/blogs"
+            >
+              See More
+            </Link>
+          </div>
         </div>
       </div>
       {/* testimonial */}

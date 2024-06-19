@@ -33,11 +33,11 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <h1 className="lg:mb-10 lg:pt-10 pt-5 text-5xl font-semibold text-center text-blue-600">
+    <div className="bg-bg-img2 bg-cover">
+      <h1 className="lg:pb-10 lg:pt-10 pt-5 text-5xl font-semibold text-center text-blue-600">
         Contact Us
       </h1>
-      <div className="hero lg:mb-14 mb-7 lg:w-[80%] mx-auto">
+      <div className="hero lg:pb-14 pb-7 lg:w-[80%] mx-auto">
         <div className="hero-content w-full flex-col lg:flex-row lg:gap-16">
           {/* contact Form */}
           <div className="flex-1 lg:mt-16 mt-5 w-[100%] card p-4 lg:p-10  shadow-lg shadow-blue-400 bg-gradient-to-b from-blue-600 to-blue-500">
@@ -76,14 +76,14 @@ const Contact = () => {
             </form>
           </div>
           {/* map */}
-          <address className="flex-1 lg:mt-16 space-y-2 mt-7">
+          <address className="flex-1 lg:mt-16 space-y-2 mt-7 font-semibold">
             <div className=" flex items-center gap-2  text-white text-lg">
               <FaLocationDot className="text-2xl" />
               <span>Road# 2, House# 2, Baitul Aman Housing, Mohammadpur</span>
             </div>
             <div className="flex  items-center gap-2 text-white text-lg">
               <FaPhoneVolume className="text-2xl" />
-              <a href="tel:+1234567890">1234567890</a>
+              <a href="tel:+8801832716948">01832716948</a>
             </div>
             <div className="flex items-center gap-2 text-white text-lg">
               <MdOutlineEmail className="text-2xl" />
@@ -104,7 +104,7 @@ const Contact = () => {
           </address>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

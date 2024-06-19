@@ -27,7 +27,7 @@ const Treatments = () => {
   };
 
   return (
-    <div className="lg:p-14 pt-7 lg:min-h-screen">
+    <div className="lg:p-14 pt-7 mb-4">
       <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">
         Our Treatments
       </h1>
@@ -71,7 +71,7 @@ const Treatments = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-8 lg:w-[80%] mx-auto">
         {searchTreatment.length > 0 ? (
           <>
             {searchTreatment.map((treatment) => (

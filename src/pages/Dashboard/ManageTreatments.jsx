@@ -18,7 +18,7 @@ const ManageTreatments = () => {
                 <th>S.No</th>
                 <th>Treatment Name</th>
                 <th>Treatment Cost</th>
-                <th>About Treatment</th>
+                <th className="hidden lg:block">About Treatment</th>
                 <th>Image</th>
                 <th>Action</th>
               </tr>

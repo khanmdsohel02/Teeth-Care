@@ -130,7 +130,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="bg-blue-500 mt-20">
+      <div className="bg-blue-700 mt-20">
         <div className="lg:min-h-16">
           <ContactNav />
         </div>

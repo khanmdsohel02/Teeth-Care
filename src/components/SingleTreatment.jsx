@@ -35,9 +35,9 @@ const SingleTreatment = ({ treatment, index }) => {
       <th>{index + 1}</th>
       <td className="capitalize">{name}</td>
       <td>{cost} TK</td>
-      <td>{about.slice(0, 30)}...</td>
+      <td className="hidden lg:block">{about.slice(0, 30)}...</td>
       {/* <td className="border-red-500 border-r">{img.slice(0, 20)}...</td> */}
-      <td className=" lg:w-[130px] lg:h-[100px]">
+      <td className=" w-[80px] h-[80px]">
         <img
           className="w-[100%] h-[100%] rounded-full"
           src={photo}

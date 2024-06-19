@@ -7,14 +7,14 @@ const TreatmentCard = ({ treatment }) => {
 
   return (
     <div className="card w-96 bg-blue-400 shadow-2xl hover:shadow-blue-600">
-      <figure className="px-10 pt-10">
-        <img src={photo} alt="Shoes" className="rounded-xl w-[100%]" />
+      <figure className="px-10 pt-10 h-[250px]">
+        <img src={photo} alt="Shoes" className="rounded-xl w-[100%] h-[100%]" />
       </figure>
-      <div className="card-body items-center  text-slate-100 space-y-2">
-        <h4 className=" font-semibold text-blue-900 text-center">
-          Taka:{cost}
+      <div className="card-body items-center text-slate-100 space-y-2">
+        <h4 className=" font-semibold py-1 px-2 rounded-xl text-slate-100  bg-blue-700 ">
+          Taka: {cost}
         </h4>
-        <h2 className="card-title text-4xl text-center capitalize">{name}</h2>
+        <h2 className="card-title text-4xl capitalize">{name}</h2>
         <p className="text-xl text-wrap">{about}</p>
         <div className="card-actions mt-4">
           <Link
