@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 const UpdateProfile = () => {
   const navigate = useNavigate();
   const { user, updateUserInfo } = useContext(AuthContext);
-
   const [userAllInfo, setUserAllInfo] = useState({});
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const UpdateProfile = () => {
 
   const handleUserUpdateInfo = (e) => {
     const token = localStorage.getItem("token");
-    console.log(token);
     const isConfirm = window.confirm("All informations are correct?");
     e.preventDefault();
     const form = e.target;
@@ -30,7 +28,6 @@ const UpdateProfile = () => {
 
     const userInfo = { email, fName, photo, PhNum };
 
-    console.log(PhNum);
     if (isConfirm) {
       updateUserInfo(fName, photo)
         .then(() => {
@@ -50,7 +47,6 @@ const UpdateProfile = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.acknowledged) {
             toast.success("User info updated successfully");
             form.reset();

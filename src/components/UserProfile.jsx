@@ -12,8 +12,6 @@ const UserProfile = () => {
   const [newPassword, setNewPassword] = useState("");
   const [oldPassword, setOldPassword] = useState("");
 
-  console.log(user?.emailVerified);
-
   useEffect(() => {
     fetch(`http://localhost:3000/users/${user?.email}`)
       .then((res) => res.json())
@@ -70,10 +68,8 @@ const UserProfile = () => {
           !user?.emailVerified
         ) {
           toast.warning("First Verify Your Email");
-          // setHidden(!hidden);
         }
       } catch (error) {
-        console.log(error.message);
         if (error.message.includes("requires-recent-login")) {
           toast.error(
             "You Already changed your password, If you want to change? Please login again"
@@ -92,14 +88,14 @@ const UserProfile = () => {
       <figure className="px-10 pt-10">
         <div className="avatar online">
           <div className="w-24 rounded-full">
-            <img src={user?.photoURL || userAllInfo?.photo} />
+            <img src={userAllInfo?.photo || user?.photoURL} />
           </div>
         </div>
       </figure>
       <div className="card-body items-center text-center text-red-500">
         <p className="text-lg text-slate-100">{userAllInfo?.PhNum}</p>
         <h2 className="card-title  text-3xl font-semibold text-slate-100">
-          {user?.displayName || userAllInfo?.fName}
+          {userAllInfo?.fName || user?.displayName}
         </h2>
         <p className="text-xl text-slate-100">
           {user?.email || userAllInfo?.email}
