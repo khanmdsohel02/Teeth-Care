@@ -79,7 +79,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="card lg:w-96 bg-blue-400 shadow-lg shadow-blue-600">
+    <div className="card lg:w-96 mt-5 bg-blue-600 shadow-lg shadow-blue-600">
       <small className="p-5 text-slate-100">
         <b>ID: </b>
         {user?.uid || userAllInfo?._id}
@@ -102,7 +102,7 @@ const UserProfile = () => {
         <div className="card-actions mt-3 mb-5">
           <Link
             to="update-profile"
-            className="btn text-2xl font-semibold border-slate-200 bg-transparent hover:bg-blue-600 text-slate-100 hover:border-none"
+            className="btn text-2xl font-semibold border-slate-200 bg-transparent hover:bg-blue-700 text-slate-100 hover:border-none"
           >
             Update Profile
           </Link>
@@ -110,7 +110,7 @@ const UserProfile = () => {
         {hidden ? (
           <button
             onClick={() => setHidden(!hidden)}
-            className="text-slate-100 p-2 rounded-lg text-lg font-semibold hover:border-2 hover:text-slate-200  border border-blue-600 hover:border-none hover:bg-red-600"
+            className="text-slate-100 p-2 rounded-lg text-lg font-semibold hover:border-2 hover:text-slate-200  border border-slate-200 hover:border-none hover:bg-red-600"
             title="Are you sure?"
           >
             Password Change
