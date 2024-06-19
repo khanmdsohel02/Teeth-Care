@@ -70,14 +70,14 @@ const Dashboard = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-gradient-to-br	from-blue-700 to-blue-400 flex flex-col justify-between">
+        <ul className="menu p-4 md:w-80 min-h-full bg-gradient-to-br	from-blue-700 to-blue-400 flex flex-col justify-between">
           {/* Sidebar content here */}
           <div className="text-lg font-semibold text-stone-100">{links}</div>
-          <div className="flex justify-between">
-            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-blue-800">
+          <div className="flex justify-between gap-2">
+            <li className="bg-blue-700 text-white text-lg md:text-xl rounded-md hover:bg-blue-800">
               <Link to="/">Go To Home</Link>
             </li>
-            <li className="bg-blue-700 text-white text-xl rounded-md hover:bg-blue-800">
+            <li className="bg-blue-700 text-white text-lg md:text-xl rounded-md hover:bg-blue-800">
               <button onClick={Signout}>LogOut</button>
             </li>
           </div>

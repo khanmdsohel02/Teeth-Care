@@ -118,7 +118,7 @@ const UserProfile = () => {
         ) : (
           <>
             {" "}
-            <label className="input input-bordered flex items-center gap-2 bg-blue-600">
+            <label className="input input-bordered flex items-center gap-2 bg-blue-700 text-slate-100">
               <input
                 onChange={(e) => setOldPassword(e.target.value)}
                 type="password"
@@ -127,7 +127,7 @@ const UserProfile = () => {
                 placeholder="Old Password"
               />
             </label>
-            <label className="input input-bordered flex items-center gap-2 bg-blue-600">
+            <label className="input input-bordered flex items-center gap-2  bg-blue-700 text-slate-100">
               <input
                 onChange={(e) => setNewPassword(e.target.value)}
                 type="password"
@@ -138,7 +138,7 @@ const UserProfile = () => {
             </label>
             <button
               onClick={handlePasswordChange}
-              className="btn text-slate-100 text-xl border-none bg-blue-600 hover:bg-red-500"
+              className="btn text-slate-100 text-xl border-slate-200 hover:border-none bg-blue-600 hover:bg-red-500"
             >
               Change
             </button>
