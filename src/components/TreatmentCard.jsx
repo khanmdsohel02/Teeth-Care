@@ -11,7 +11,7 @@ const TreatmentCard = ({ treatment }) => {
         <img src={photo} alt="Shoes" className="rounded-xl w-[100%] h-[100%]" />
       </figure>
       <div className="card-body items-center text-slate-100 space-y-2">
-        <h4 className=" font-semibold px-4  rounded-xl text-slate-100  bg-blue-700 ">
+        <h4 className=" font-semibold px-4 text-pretty  rounded-xl text-slate-100  bg-blue-700 ">
           Taka: {cost}
         </h4>
         <h2 className="card-title text-4xl capitalize">{name}</h2>
