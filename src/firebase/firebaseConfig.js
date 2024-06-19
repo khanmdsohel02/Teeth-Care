@@ -10,8 +10,6 @@ import { getAuth } from "firebase/auth";
 //   appId: "1:1035472265958:web:3759a56261145b7ba35127",
 // };
 
-console.log(import.meta.env.VITE_FIREBASE_API_KEY);
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
