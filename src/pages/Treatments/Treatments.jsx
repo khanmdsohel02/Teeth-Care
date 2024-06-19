@@ -48,7 +48,7 @@ const Treatments = () => {
           </div>
           <select
             onChange={(e) => setSearchByName(e.target.value)}
-            className="select select-bordered border-r-0 join-item capitalize rounded-none w-[100%]"
+            className="select select-bordered lg:border-r-0 join-item capitalize rounded-none w-[100%]"
             value={searchByName}
           >
             <option selected>Filtering By Name</option>
