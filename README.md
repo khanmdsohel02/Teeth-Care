@@ -1,18 +1,18 @@
 -প্রজেক্ট এর বিস্তারিত
 
-##Frontend
+## Frontend
 
--## UI --> React, tailwindcss , daisyui, swiperjs
+- ## UI --> React, tailwindcss , daisyui, swiperjs
 
--## Auth --> firebase
+- ## Auth --> firebase
 
--## Mail send --> emailjs
+- ## Mail send --> emailjs
 
--## Verify user --> JWT
+- ## Verify user --> JWT
 
-##Backend
+## Backend
 
--## Node.js, Express.js, MongoDB
+- ## Node.js, Express.js, MongoDB
 
 -এটি মূলত একটি mern প্রজেক্ট এই প্রজেক্টটি তৈরি করতে reactjs ,mongodb ,expressjs , nodejs ব্যবহার করা হয়েছে
 
