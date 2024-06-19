@@ -10,9 +10,13 @@
 
 - ## Verify user --> JWT
 
+---
+
 ## Backend
 
 - ## Node.js, Express.js, MongoDB
+
+---
 
 -এটি মূলত একটি mern প্রজেক্ট এই প্রজেক্টটি তৈরি করতে reactjs ,mongodb ,expressjs , nodejs ব্যবহার করা হয়েছে
 
