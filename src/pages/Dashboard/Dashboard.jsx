@@ -64,7 +64,7 @@ const Dashboard = () => {
         </label>
       </div>
 
-      <div className="drawer-side z-10">
+      <div className="drawer-side z-10 h-[100vh]">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
