@@ -113,7 +113,7 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
-                <div className="avatar online">
+                <div className="avatar online hidden md:block">
                   <div className="w-14 rounded-full">
                     <img className="w-full" src={user?.photoURL} />
                   </div>
