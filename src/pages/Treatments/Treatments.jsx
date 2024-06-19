@@ -75,7 +75,7 @@ const Treatments = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-8 lg:w-[80%] mx-auto">
         {loading ? (
-          <span className="loading loading-spinner loading-lg h-[80vh] mx-auto grid items-center"></span>
+          <span className="loading loading-spinner loading-lg h-[80vh] flex justify-center items-center"></span>
         ) : (
           <>
             {searchTreatment.length > 0 ? (
