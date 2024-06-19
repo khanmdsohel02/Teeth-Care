@@ -13,7 +13,7 @@ const UserProfile = () => {
   const [oldPassword, setOldPassword] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${user?.email}`)
+    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAllInfo(data);
@@ -36,7 +36,7 @@ const UserProfile = () => {
   };
 
   const handlePasswordUpdate = async () => {
-    fetch(`http://localhost:3000/users/${user?.email}`, {
+    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

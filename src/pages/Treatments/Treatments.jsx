@@ -1,6 +1,4 @@
 import TreatmentCard from "../../components/TreatmentCard";
-// import { useContext } from "react";
-// import { AuthContext } from "../../ContextProvider/AuthProvider";
 import { useEffect, useState } from "react";
 
 const Treatments = () => {
@@ -9,7 +7,7 @@ const Treatments = () => {
   const [searchByName, setSearchByName] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/treatments`)
+    fetch(`https://teeth-care-backend.vercel.app/treatments`)
       .then((res) => res.json())
       .then((data) => {
         setTreatments(data);
@@ -19,7 +17,9 @@ const Treatments = () => {
   }, []);
 
   const handleSearchByName = () => {
-    fetch(`http://localhost:3000/treatments?name=${searchByName.toLowerCase()}`)
+    fetch(
+      `https://teeth-care-backend.vercel.app/treatments?name=${searchByName.toLowerCase()}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setsearchTreatment(data);

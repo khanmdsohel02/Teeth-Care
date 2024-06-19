@@ -1,5 +1,19 @@
 -প্রজেক্ট এর বিস্তারিত
 
+#Frontend
+
+## -UI-> React, tailwindcss , daisyui, swiperjs
+
+## Auth-> firebase
+
+## Mail send-> emailjs
+
+## Verify user-> JWT
+
+#Backend
+
+## Node.js, Express.js, MongoDB
+
 -এটি মূলত একটি mern প্রজেক্ট এই প্রজেক্টটি তৈরি করতে reactjs ,mongodb ,expressjs , nodejs ব্যবহার করা হয়েছে
 
 -এছাড়াও প্রজেক্টের ইউ আই এমপ্লয়মেন্টেশনের জন্য tailwindcss , daisyui, swiperjs
@@ -30,6 +44,6 @@
 
 ---
 
--সার্ভার সাইট লিংক :: http://localhost:3000/
+-[সার্ভার সাইট লিংক](https://teeth-care-backend.vercel.app/)
 
--ক্লাইন্ট সাইট লিংক :: https://teeth-care-client.vercel.app/
+-[ক্লাইন্ট সাইট লিংক](https://teeth-care-client.vercel.app/)

@@ -13,7 +13,7 @@ const Appointment = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/treatment/${id}`)
+    fetch(`https://teeth-care-backend.vercel.app/treatment/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTreatment(data);
@@ -35,7 +35,7 @@ const Appointment = () => {
     const token = localStorage.getItem("token");
     e.preventDefault();
 
-    fetch(`http://localhost:3000/appointment`, {
+    fetch(`https://teeth-care-backend.vercel.app/appointment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,10 +47,10 @@ const Appointment = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success(`We Get Your ${treatment?.name} Appointment`);
-          navigate(-1);
+          navigate("/treatments");
         } else if (data.message) {
           toast.warning(data.message);
-          navigate(-1);
+          navigate("/treatments");
         }
         navigate("/treatments");
       });

@@ -9,7 +9,7 @@ const UpdateProfile = () => {
   const [userAllInfo, setUserAllInfo] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${user?.email}`)
+    fetch(`https://teeth-care-backend.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAllInfo(data);
@@ -37,14 +37,17 @@ const UpdateProfile = () => {
           console.error("Error updating user info:", error.message);
         });
 
-      fetch(`http://localhost:3000/update-user/${user?.email}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(userInfo),
-      })
+      fetch(
+        `https://teeth-care-backend.vercel.app/update-user/${user?.email}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(userInfo),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {

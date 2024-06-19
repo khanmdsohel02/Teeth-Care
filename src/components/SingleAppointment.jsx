@@ -14,7 +14,7 @@ const SingleAppointment = ({ appointment, index }) => {
       `Are you sure? You want to delete ${appointment?.treatment}`
     );
     if (isConfirm) {
-      await fetch(`http://localhost:3000/appointment/${id}`, {
+      await fetch(`https://teeth-care-backend.vercel.app/appointment/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${token}`,
@@ -33,7 +33,7 @@ const SingleAppointment = ({ appointment, index }) => {
   const handleUpdateAppointment = async (id, status) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`http://localhost:3000/appointment/${id}`, {
+    await fetch(`https://teeth-care-backend.vercel.app/appointment/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

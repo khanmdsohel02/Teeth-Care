@@ -17,7 +17,7 @@ const AddTreatment = () => {
     const treatment = { name: name.toLowerCase(), cost, about, photo };
 
     if (isConfirm) {
-      fetch("http://localhost:3000/treatment", {
+      fetch("https://teeth-care-backend.vercel.app/treatment", {
         method: "POST",
         headers: {
           "content-type": "application/json",
