@@ -21,10 +21,9 @@ const SingleTreatment = ({ treatment, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             toast.success("Treatment deleted successfully");
-            navigate("/treatments");
+            navigate("/dashboard/manage-treatments");
           }
         });
     }
@@ -47,13 +46,13 @@ const SingleTreatment = ({ treatment, index }) => {
       <td className="flex gap-2 justify-center mt-4">
         <Link
           to={`update-treatment/${id}`}
-          className="btn text-red-500 bg-orange-200 text-lg"
+          className="btn text-slate-50 bg-blue-400 hover:bg-blue-500 text-lg border-none"
         >
           Edit
         </Link>
         <button
           onClick={() => handleDeleteProduct(id)}
-          className="btn bg-red-500 hover:bg-red-600 text-white text-lg"
+          className="btn bg-red-500 hover:bg-red-600 text-slate-100 text-lg border-none"
         >
           Delete
         </button>

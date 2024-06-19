@@ -12,7 +12,7 @@ const SingleUser = ({ index, user }) => {
       </td>
       <td className="text-lg ">{user?.fName}</td>
       <td className="text-lg">{user?.email}</td>
-      <td className="text-lg">{user?.PhNum || "-----------"}</td>
+      <td className="text-lg">{user?.PhNum || "--------"}</td>
     </tr>
   );
 };

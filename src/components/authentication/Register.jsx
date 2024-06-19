@@ -30,10 +30,10 @@ const Register = () => {
           displayName: fName,
           photoURL: photo,
         }).then(() => {
-          console.log("User registered:", user);
-          console.log("User email:", user.email);
-          console.log("User Name:", user.displayName);
-          console.log("User Photo:", user.photoURL);
+          // console.log("User registered:", user);
+          // console.log("User email:", user.email);
+          // console.log("User Name:", user.displayName);
+          // console.log("User Photo:", user.photoURL);
 
           navigate(location?.state ? location.state : "/");
 
@@ -60,7 +60,6 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        console.log(error.message);
         if (error.message.includes("email-already-in-use")) {
           toast.error("Email already in Use. Please Login.");
         } else if (error.message.includes("weak-password")) {
@@ -89,7 +88,6 @@ const Register = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("token", data?.token);
 
             if (data?.message) {

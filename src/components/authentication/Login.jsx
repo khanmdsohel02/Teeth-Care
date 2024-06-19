@@ -34,7 +34,6 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("token", data?.token);
 
             if (data?.message) {
@@ -76,7 +75,6 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("token", data?.token);
 
             if (data?.message) {
@@ -105,8 +103,6 @@ const Login = () => {
         if (errorMessage.includes("missing-email")) {
           toast.error("Plz! Fill Email Field");
         }
-
-        // ..
       });
   };
 

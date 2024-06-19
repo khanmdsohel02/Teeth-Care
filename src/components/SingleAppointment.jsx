@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 const SingleAppointment = ({ appointment, index }) => {
   const [done, setDone] = useState(appointment?.status || false);
   const navigate = useNavigate();
-  console.log(done);
 
   const handleDeleteAppointment = async (id) => {
     const token = localStorage.getItem("token");
@@ -33,26 +32,22 @@ const SingleAppointment = ({ appointment, index }) => {
 
   const handleUpdateAppointment = async (id, status) => {
     const token = localStorage.getItem("token");
-    const isConfirm = window.confirm(
-      `Are you sure? You want to update ${appointment?.treatment}`
-    );
-    if (isConfirm) {
-      await fetch(`http://localhost:3000/appointment/${id}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ status: status }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.modifiedCount > 0) {
-            toast.success("Appointment status updated successfully");
-            navigate("/dashboard/all-appointments");
-          }
-        });
-    }
+
+    await fetch(`http://localhost:3000/appointment/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ status: status }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Appointment status updated successfully");
+          navigate("/dashboard/all-appointments");
+        }
+      });
   };
 
   useEffect(() => {
@@ -66,7 +61,7 @@ const SingleAppointment = ({ appointment, index }) => {
       <tr className="text-center text-xl text-slate-200 border-b-slate-200">
         <td className="hidden lg:block">{index + 1}</td>
         <td>{appointment?.treatment}</td>
-        <td>{appointment?.treatmentCost}</td>
+        <td className="hidden lg:block">{appointment?.treatmentCost}</td>
         <td>{appointment?.patientName}</td>
         <td>{appointment?.patientEmail}</td>
         <td>{appointment?.phNum}</td>

@@ -3,9 +3,12 @@ import SingleUser from "../../components/SingleUser";
 
 const AllUser = () => {
   const users = useLoaderData();
-  console.log(users);
+
   return (
     <div className="overflow-auto">
+      <h1 className="text-5xl font-bold text-center mb-10 text-slate-200">
+        All User&apos;s
+      </h1>
       <table className="table text-slate-200 bg-blue-600 rounded-none">
         {/* head */}
         <thead>

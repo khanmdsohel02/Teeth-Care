@@ -28,7 +28,6 @@ const UserProfile = () => {
 
       return authSuccess;
     } catch (error) {
-      console.log("Error:", error);
       if (error.message.includes("invalid-credential")) {
         toast.error("Maybe Your a Google User Or Your Old password is wrong");
         return;

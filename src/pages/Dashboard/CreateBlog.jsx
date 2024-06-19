@@ -13,7 +13,6 @@ const CreateBlog = () => {
     const createdDate = form.date.value;
 
     const blog = { question, qanswer, photo, createdDate };
-    console.log(blog);
 
     const isConfirm = window.confirm(
       `Are you sure?You want to create ${question} blog?`
@@ -30,7 +29,6 @@ const CreateBlog = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.acknowledged) {
             toast.success("Blog created successfully");
             form.reset();

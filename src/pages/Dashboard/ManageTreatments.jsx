@@ -5,7 +5,7 @@ const ManageTreatments = () => {
   const treatments = useLoaderData();
 
   return (
-    <div className="text-3xl">
+    <div className="text-3xl mt-5">
       <div>
         <h1 className="lg:text-5xl font-bold text-center mb-10 text-slate-200">
           Manage Treatment

@@ -14,7 +14,6 @@ const AddReview = () => {
     const reviewDate = form.reviewdate.value;
 
     const reviewData = { reviewername, title, review, photo, reviewDate };
-    console.log(reviewData);
 
     const isConfirm = window.confirm(
       `Are you sure? ${title} is a correct review?`

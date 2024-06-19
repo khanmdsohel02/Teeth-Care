@@ -12,9 +12,9 @@ const UpdateTreatment = () => {
       .then((res) => res.json())
       .then((data) => {
         setTreatment(data);
-        console.log(data);
       });
   }, [id]);
+
   const handleUpdateTreatment = (e) => {
     const token = localStorage.getItem("token");
     e.preventDefault();

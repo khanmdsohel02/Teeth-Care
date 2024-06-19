@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Blogs = () => {
   const blogs = useLoaderData();
-  console.log(blogs);
+
   return (
     <div className="lg:my-20 my-10 lg:w-[80%] mx-auto min-h-screen">
       <h1 className="mb-14 text-5xl font-semibold text-center text-blue-600">

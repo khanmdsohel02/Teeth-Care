@@ -14,10 +14,7 @@ const AddTreatment = () => {
       `Are you sure? You want to add ${name} treatment`
     );
 
-    console.log(isConfirm);
-
     const treatment = { name: name.toLowerCase(), cost, about, photo };
-    console.log(treatment);
 
     if (isConfirm) {
       fetch("http://localhost:3000/treatment", {
