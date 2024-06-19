@@ -1,16 +1,16 @@
 -প্রজেক্ট এর বিস্তারিত
 
-#Frontend
+###Frontend
 
-## -UI-> React, tailwindcss , daisyui, swiperjs
+## UI --> React, tailwindcss , daisyui, swiperjs
 
-## Auth-> firebase
+## Auth --> firebase
 
-## Mail send-> emailjs
+## Mail send --> emailjs
 
-## Verify user-> JWT
+## Verify user --> JWT
 
-#Backend
+###Backend
 
 ## Node.js, Express.js, MongoDB
 
