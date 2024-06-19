@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <div className="hero h-[70vh]  md:min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
+      <div className="hero h-[80vh]  md:min-h-screen bg-gradient-to-t from-blue-700 to-blue-400">
         <div className="hero-content w-full  lg:flex-row-reverse gap-x-[10%]">
           <img
             src="https://i.ibb.co/zFgmsc2/header.jpg"
