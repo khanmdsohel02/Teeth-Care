@@ -1,10 +1,12 @@
+import { AuthContext } from "../../ContextProvider/AuthProvider";
 import TreatmentCard from "../../components/TreatmentCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const Treatments = () => {
   const [treatments, setTreatments] = useState([]);
   const [searchTreatment, setsearchTreatment] = useState([]);
   const [searchByName, setSearchByName] = useState("");
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`https://teeth-care-backend.vercel.app/treatments`)
@@ -72,17 +74,23 @@ const Treatments = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center content-center gap-8 lg:w-[80%] mx-auto">
-        {searchTreatment.length > 0 ? (
-          <>
-            {searchTreatment.map((treatment) => (
-              <TreatmentCard key={treatment._id} treatment={treatment} />
-            ))}
-          </>
+        {loading ? (
+          <span className="loading loading-spinner loading-lg h-[80vh] mx-auto grid items-center"></span>
         ) : (
           <>
-            {treatments.map((treatment) => (
-              <TreatmentCard key={treatment._id} treatment={treatment} />
-            ))}
+            {searchTreatment.length > 0 ? (
+              <>
+                {searchTreatment.map((treatment) => (
+                  <TreatmentCard key={treatment._id} treatment={treatment} />
+                ))}
+              </>
+            ) : (
+              <>
+                {treatments.map((treatment) => (
+                  <TreatmentCard key={treatment._id} treatment={treatment} />
+                ))}
+              </>
+            )}
           </>
         )}
       </div>
