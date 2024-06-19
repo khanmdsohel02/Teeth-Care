@@ -75,7 +75,7 @@ const Home = () => {
             <h1 className="lg:text-5xl text-3xl  font-bold">
               We Create Beautiful Smiles
             </h1>
-            <p className="py-6 text-xl">
+            <div className="py-6 text-xl">
               <p>
                 Dentalia is a modern dental clinic, specialized in advanced
                 diagnostics and treatment of dental and oral disorders.
@@ -87,7 +87,7 @@ const Home = () => {
                 in a comfortable, luxury environment. New patients are welcomed
                 with a complimentary oral health consultation.
               </p>
-            </p>
+            </div>
           </div>
         </div>
       </div>

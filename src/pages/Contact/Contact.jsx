@@ -99,7 +99,6 @@ const Contact = () => {
             <iframe
               className="w-full lg:h-[300px] rounded-lg border-2 border-blue-600"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7299.366559583074!2d90.363497!3d23.829859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c12555555555%3A0xae6d8391967a1b11!2sSporsho%20Dental%20Care!5e0!3m2!1sen!2sbd!4v1717579969715!5m2!1sen!2sbd"
-              allowfullscreen=""
               loading="lazy"
             ></iframe>
           </address>
