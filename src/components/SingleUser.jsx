@@ -6,7 +6,7 @@ const SingleUser = ({ index, user }) => {
       <td className="w-20 h-20">
         <img
           className="w-[100%] h-[100%] rounded-full"
-          src={user?.photo}
+          src={user?.photoURL || "https://i.ibb.co/n3zkd8b/manIcon.jpg"}
           alt="photo"
         />
       </td>

@@ -8,6 +8,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
 
+  console.log(user);
+
   const handleLogOut = () => {
     logOut();
     toast.success("Thank you for visiting! Teeth Care");
@@ -113,9 +115,18 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
-                <div className="avatar online hidden md:block">
+                <div className="avatar hidden md:block">
                   <div className="w-14 rounded-full">
-                    <img className="w-full" src={user?.photoURL} />
+                    <img
+                      className="w-full"
+                      src={
+                        user?.photoURL || "https://i.ibb.co/n3zkd8b/manIcon.jpg"
+                      }
+                    />
+                    {/* <img
+                      className="w-full"
+                      src="https://i.ibb.co/n3zkd8b/manIcon.jpg"
+                    /> */}
                   </div>
                 </div>
               </>

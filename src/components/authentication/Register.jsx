@@ -166,7 +166,6 @@ const Register = () => {
               type="text"
               placeholder="Your Photo URL"
               className="input input-bordered text-xl bg-blue-100 text-blue-900"
-              required
             />
           </div>
           <label className="label lg:mt-3 lg:w-[62%] w-full text-blue-400">
