@@ -158,7 +158,7 @@ const Register = () => {
           <div className="form-control">
             <label className="label ">
               <span className="label-text text-lg text-slate-100">
-                Photo URL (Optional)
+                Photo URL
               </span>
             </label>
             <input
@@ -166,6 +166,7 @@ const Register = () => {
               type="text"
               placeholder="Your Photo URL"
               className="input input-bordered text-xl bg-blue-100 text-blue-900"
+              required
             />
           </div>
           <label className="label lg:mt-3 lg:w-[62%] w-full text-blue-400">
