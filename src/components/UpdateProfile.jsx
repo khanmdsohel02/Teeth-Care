@@ -96,6 +96,7 @@ const UpdateProfile = () => {
           type="text"
           className="w-full input input-bordered text-xl font-medium bg-blue-100 text-blue-900"
           defaultValue={user?.photoURL || userAllInfo?.photo}
+          placeholder="Photo URL"
         />
 
         <button
