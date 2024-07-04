@@ -1,10 +1,12 @@
-- [Server](https://teeth-care-backend.vercel.app/)
+<h3 align="left">[Server](https://teeth-care-backend.vercel.app/)</h3>
 
-- [Client](https://teeth-care-client.vercel.app/)
+<h3 align="left">[Client](https://teeth-care-client.vercel.app/)</h3>
   
-This website is mainly for those who have physical problems to get quick
-service. With the help of this website, we can easily contact the Doctors and
-book the doctor's appointment.This website is mainly for those who have physical problems to get quick service. With the help of this website, we can easily contact the Doctors and book the doctor's appointment.
+This website is mainly for those who have dental problems to get quick
+service. With the help of this website, we can easily contact the dentist and
+book the doctor's appointment. Besides, by reading different Blogs, patients
+can be aware about their disease and teeth care. As a result of this, we are
+hopeful that people's dental problems will be reduced to some extent.
 
 <h3 align="left">Features:</h3>
 
